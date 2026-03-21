@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Portfolio - Jesada Sansupha</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #3b82f6;
+            --accent: #10b981;
+            --accent-glow: rgba(16, 185, 129, 0.4);
+            --bg-body: #f8fafc;
+            --bg-glass: rgba(255, 255, 255, 0.75);
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --nav-height: 75px;
+            --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            margin: 0;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            padding-bottom: calc(var(--nav-height) + 30px);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ซ่อน Scrollbar สำหรับทุกเบราว์เซอร์ */
+        .app-container::-webkit-scrollbar,
+        .page-content::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        .app-container {
+            width: 100%;
+            max-width: 450px;
+            height: 100vh;
+            background-color: var(--bg-light);
+            position: relative;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .page-content {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* --- Background Graphics --- */
+        .bg-shape {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: -1;
+            opacity: 0.5;
+            animation: float 10s infinite ease-in-out alternate;
+        }
+
+        .shape-1 {
+            top: -10%;
+            left: -10%;
+            width: 300px;
+            height: 300px;
+            background: var(--secondary);
+        }
+
+        .shape-2 {
+            bottom: 10%;
+            right: -10%;
+            width: 250px;
+            height: 250px;
+            background: var(--accent);
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(30px, 50px) scale(1.1);
+            }
+        }
+
+        /* --- Header Glassmorphism --- */
+        header {
+            background: var(--bg-glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 18px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .app-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-dot {
+            height: 10px;
+            width: 10px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 10px var(--accent-glow);
+            animation: pulse 2s infinite;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            display: none;
+            animation: fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        section.active {
+            display: block;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- UI Components --- */
+        .card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-glass);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            background: rgba(59, 130, 246, 0.1);
+            padding: 8px;
+            border-radius: 10px;
+            color: var(--secondary);
+        }
+
+        /* --- Home Dashboard --- */
+        .home-banner {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            padding: 30px 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.2);
+        }
+
+        .home-banner::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-num {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* --- Profile --- */
+        .profile-img-wrap {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 15px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .badge-pro {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: var(--secondary);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid white;
+        }
+
+        .skill-tag {
+            background: #e2e8f0;
+            color: #334155;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .skill-tag.expert {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--secondary);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        /* --- Portfolio & Activities Grid --- */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .media-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .media-card:active {
+            transform: scale(0.96);
+        }
+
+        .media-img {
+            height: 120px;
+            width: 100%;
+            object-fit: cover;
+            background: #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .media-content {
+            padding: 12px;
+            flex-grow: 1;
+        }
+
+        .media-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0 0 5px;
+            line-height: 1.3;
+        }
+
+        .media-tag {
+            font-size: 0.7rem;
+            color: var(--secondary);
+            background: rgba(59, 130, 246, 0.1);
+            padding: 3px 8px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        /* --- Timeline --- */
+        .timeline {
+            border-left: 2px solid #e2e8f0;
+            padding-left: 20px;
+            margin-left: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -27px;
+            top: 2px;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary);
+            border: 3px solid #eff6ff;
+            border-radius: 50%;
+        }
+
+        /* --- Bottom Navigation (Modern FAB) --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            background: var(--bg-glass);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: 0 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.6);
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        .nav-item {
+            flex: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 0.7rem;
+            font-weight: 500;
+            height: 100%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .nav-item i {
+            font-size: 1.3rem;
+            margin-bottom: 4px;
+            transition: 0.3s;
+        }
+
+        .nav-item.active {
+            color: var(--primary);
+        }
+
+        .nav-item.active i {
+            transform: translateY(-3px);
+            color: var(--secondary);
+        }
+
+        /* FAB Button Center */
+        .nav-fab-container {
+            position: relative;
+            flex: 1.2;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-fab {
+            position: absolute;
+            top: -30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+            border: 4px solid var(--bg-body);
+            transition: transform 0.2s, box-shadow 0.2s;
+            z-index: 1001;
+        }
+
+        .nav-fab-container.active .nav-fab {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.6);
+        }
+
+        .nav-fab-text {
+            margin-top: 35px;
+            color: #94a3b8;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .nav-fab-container.active .nav-fab-text {
+            color: var(--primary);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 var(--accent-glow);
+            }
+
+            70% {
+                box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <header>
+        <div class="app-title"><i class="fa-brands fa-connectdevelop"></i> Jesada.Dev</div>
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 600; color: var(--primary);">
+            <span class="status-dot"></span> Ready for Work
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section id="home" class="active">
+            <div class="home-banner">
+                <h2 style="margin: 0 0 5px; font-size: 1.6rem;">สวัสดีครับ 👋</h2>
+                <p style="margin: 0 0 15px; opacity: 0.9; font-size: 0.95rem;">ผม เจษฎา แสนสุภา<br>Programmer & System Developer</p>
+                <div style="background: rgba(0,0,0,0.2); display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; backdrop-filter: blur(5px);">
+                    <i class="fas fa-code"></i> UX/UI • Coding • Security
+                </div>
+            </div>
+
+            <div class="stat-grid">
+                <div class="stat-box" onclick="switchTab('experience', document.querySelectorAll('.nav-item')[1])">
+                    <div class="stat-num">13+</div>
+                    <div class="stat-label">ปี ประสบการณ์ทำงาน</div>
+                </div>
+                <div class="stat-box" onclick="switchTab('portfolio', document.querySelectorAll('.nav-item')[3])">
+                    <div class="stat-num">10+</div>
+                    <div class="stat-label">โปรเจกต์ & ระบบงาน</div>
+                </div>
+            </div>
+
+            <h3 class="section-title" style="margin-top: 25px;"><i class="fas fa-fire"></i> ผลงานล่าสุด</h3>
+            <div class="card" style="padding: 15px;">
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <div style="width: 60px; height: 60px; background: #e0f2fe; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--secondary); font-size: 1.5rem;">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div>
+                        <h4 style="margin: 0 0 4px; color: var(--text-main);">Green Area Dashboard</h4>
+                        <p style="margin: 0; font-size: 0.8rem; color: var(--text-muted);">ระบบดึงข้อมูล API สรุปพื้นที่สีเขียวบนแดชบอร์ด</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="profile">
+            <div class="card" style="text-align: center;">
+                <div class="profile-img-wrap">
+                    <img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/249662.jpg" alt="Jesada" class="profile-img">
+                    <div class="badge-pro"><i class="fas fa-check"></i></div>
+                </div>
+                <h2 style="margin: 0; font-size: 1.4rem; color: var(--primary);">เจษฎา แสนสุภา (เจษ)</h2>
+                <p style="margin: 5px 0 15px; color: var(--text-muted); font-size: 0.9rem;">เจ้าหน้าที่ระบบงานคอมพิวเตอร์ / นักพัฒนา</p>
+                
+                <div style="display: flex; justify-content: center; gap: 12px;">
+                    <a href="tel:0828414124" style="background: var(--primary); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.9rem; font-weight: 500; box-shadow: 0 4px 10px rgba(30,58,138,0.2);"><i class="fas fa-phone-alt"></i> โทรติดต่อ</a>
+                    <a href="mailto:virusnakub@gmail.com" style="background: white; color: var(--primary); padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.9rem; font-weight: 500; border: 1px solid var(--primary);"><i class="fas fa-envelope"></i> ส่งอีเมล</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="section-title"><i class="fas fa-bolt"></i> ความเชี่ยวชาญ (Skills)</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <span class="skill-tag expert">UX/UI Design</span>
+                    <span class="skill-tag expert">Web Development</span>
+                    <span class="skill-tag expert">System Security</span>
+                    <span class="skill-tag">Network Setup</span>
+                    <span class="skill-tag">Graphic Design</span>
+                    <span class="skill-tag">Teaching & Training</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> ประสบการณ์ทำงาน</h2>
+            <div class="card">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 style="margin:0; font-size:1rem;">เจ้าหน้าที่ระบบงานคอมพิวเตอร์</h4>
+                        <div style="color: var(--secondary); font-size:0.85rem; font-weight:600; margin:4px 0;">กรมการเปลี่ยนแปลงสภาพภูมิอากาศและสิ่งแวดล้อม</div>
+                        <div style="font-size:0.8rem; color:#94a3b8;"><i class="far fa-calendar-alt"></i> 2566 – ปัจจุบัน</div>
+                        <ul style="padding-left:15px; font-size:0.85rem; color:var(--text-muted); margin-top:8px;">
+                            <li>ดูแลระบบเว็บไซต์กรมฯ (www.dcce.go.th)</li>
+                            <li>พัฒนาระบบศูนย์ CCECENTER และเรื่องร้องเรียน</li>
+                            <li>พัฒนาระบบ Line Chat-bot</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 style="margin:0; font-size:1rem;">เจ้าหน้าที่ระบบงานคอมพิวเตอร์</h4>
+                        <div style="color: var(--secondary); font-size:0.85rem; font-weight:600; margin:4px 0;">กรมส่งเสริมคุณภาพสิ่งแวดล้อม</div>
+                        <div style="font-size:0.8rem; color:#94a3b8;"><i class="far fa-calendar-alt"></i> 2565 – 2566</div>
+                    </div>
+                    <div class="timeline-item" style="margin-bottom:0;">
+                        <div class="timeline-dot"></div>
+                        <h4 style="margin:0; font-size:1rem;">ครูผู้สอน / บุคลากรทางการศึกษา</h4>
+                        <div style="color: var(--secondary); font-size:0.85rem; font-weight:600; margin:4px 0;">วิทยาลัยเทคโนโลยีธาตุพนม</div>
+                        <div style="font-size:0.8rem; color:#94a3b8;"><i class="far fa-calendar-alt"></i> 2552 – 2565 (13 ปี)</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> ประวัติการศึกษา</h2>
+            <div class="card">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot" style="background:var(--accent); border-color:#ecfdf5;"></div>
+                        <h4 style="margin:0; font-size:1rem;">ประกาศนียบัตรบัณฑิตวิชาชีพครู</h4>
+                        <div style="color: var(--text-muted); font-size:0.85rem; margin:2px 0;">มหาวิทยาลัยราชภัฏสกลนคร (2556)</div>
+                    </div>
+                    <div class="timeline-item" style="margin-bottom:0;">
+                        <div class="timeline-dot" style="background:var(--accent); border-color:#ecfdf5;"></div>
+                        <h4 style="margin:0; font-size:1rem;">ป.ตรี บธ.บ. คอมพิวเตอร์ธุรกิจ</h4>
+                        <div style="color: var(--text-muted); font-size:0.85rem; margin:2px 0;">มหาวิทยาลัยราชภัฏสกลนคร (2554)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <h2 class="section-title"><i class="fas fa-laptop-code"></i> ระบบและแอปพลิเคชันที่พัฒนา</h2>
+            <div class="grid-2">
+                
+                <a href="#" class="media-card">
+                    <div class="media-img" style="background: linear-gradient(45deg, #10b981, #34d399);"><i class="fas fa-calendar-check"></i></div>
+                    <div class="media-content">
+                        <span class="media-tag">Web App</span>
+                        <h4 class="media-title">ระบบจองห้องประชุม</h4>
+                        <p style="margin:0; font-size:0.75rem; color:var(--text-muted);">เชื่อมต่อ Google Calendar & Sheets</p>
+                    </div>
+                </a>
+
+                <a href="#" class="media-card">
+                    <div class="media-img" style="background: linear-gradient(45deg, #3b82f6, #60a5fa);"><i class="fas fa-id-card"></i></div>
+                    <div class="media-content">
+                        <span class="media-tag">HR System</span>
+                        <h4 class="media-title">ระบบสารสนเทศงานบุคคล</h4>
+                        <p style="margin:0; font-size:0.75rem; color:var(--text-muted);">จัดการข้อมูลและพิมพ์บัตรพนักงาน</p>
+                    </div>
+                </a>
+
+                <a href="https://greenarea.dcce.go.th/" target="_blank" class="media-card">
+                    <div class="media-img" style="background: linear-gradient(45deg, #059669, #10b981);"><i class="fas fa-leaf"></i></div>
+                    <div class="media-content">
+                        <span class="media-tag">API & Dashboard</span>
+                        <h4 class="media-title">Green Area Dashboard</h4>
+                        <p style="margin:0; font-size:0.75rem; color:var(--text-muted);">สรุปข้อมูลพื้นที่สีเขียว</p>
+                    </div>
+                </a>
+
+                <a href="https://petition.dcce.go.th/" target="_blank" class="media-card">
+                    <div class="media-img" style="background: linear-gradient(45deg, #f59e0b, #fbbf24);"><i class="fas fa-comments"></i></div>
+                    <div class="media-content">
+                        <span class="media-tag">System</span>
+                        <h4 class="media-title">ระบบร้องเรียน DCCE</h4>
+                        <p style="margin:0; font-size:0.75rem; color:var(--text-muted);">รับเรื่องร้องเรียนออนไลน์</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <section id="activities">
+            <h2 class="section-title"><i class="fas fa-chalkboard-teacher"></i> หลักสูตรการอบรม</h2>
+            <div class="card" style="padding: 15px;">
+                <div style="display: flex; gap: 15px; margin-bottom: 15px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px;">
+                    <img src="https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" style="width: 80px; height: 60px; border-radius: 8px; object-fit: cover;">
+                    <div>
+                        <h4 style="margin:0 0 5px; font-size:0.9rem;">การอบรมด้าน Security & UX/UI</h4>
+                        <p style="margin:0; font-size:0.8rem; color:var(--text-muted);">เสริมสร้างทักษะการออกแบบและรักษาความปลอดภัยระบบ</p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" style="width: 80px; height: 60px; border-radius: 8px; object-fit: cover;">
+                    <div>
+                        <h4 style="margin:0 0 5px; font-size:0.9rem;">งานประกันคุณภาพการศึกษา (QA)</h4>
+                        <p style="margin:0; font-size:0.8rem; color:var(--text-muted);">วิทยาลัยเทคโนโลยีธาตุพนม</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title"><i class="fas fa-images"></i> ภาพกิจกรรม</h2>
+            <div class="grid-2">
+                <div class="media-card">
+                    <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="media-img" style="height: 100px;">
+                    <div class="media-content" style="padding: 8px;">
+                        <h4 style="margin:0; font-size:0.8rem; text-align: center;">วิทยากรบริการวิชาชีพ</h4>
+                    </div>
+                </div>
+                <div class="media-card">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="media-img" style="height: 100px;">
+                    <div class="media-content" style="padding: 8px;">
+                        <h4 style="margin:0; font-size:0.8rem; text-align: center;">คณะกรรมการคุมสอบ v-net</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div> 
+    <nav class="bottom-nav">
+        <div class="nav-item" onclick="switchTab('profile', this)">
+            <i class="fas fa-user"></i><span>ประวัติ</span>
+        </div>
+        <div class="nav-item" onclick="switchTab('education', this)">
+            <i class="fas fa-graduation-cap"></i><span>การศึกษา</span>
+        </div>
+        <div class="nav-item" onclick="switchTab('experience', this)">
+            <i class="fas fa-briefcase"></i><span>ประสบการณ์</span>
+        </div>
+        <div class="nav-item nav-fab-container active" onclick="switchTab('home', this)">
+            <div class="nav-fab"><i class="fas fa-home"></i></div>
+            <span class="nav-fab-text">HOME</span>
+        </div>
+        <div class="nav-item" onclick="switchTab('portfolio', this)">
+            <i class="fas fa-layer-group"></i><span>ผลงาน</span>
+        </div>
+                <div class="nav-item" onclick="switchTab('skills', this)">
+            <i class="fas fa-tools"></i><span>ทักษะ</span>
+        </div>
+        <div class="nav-item" onclick="switchTab('activities', this)">
+            <i class="fas fa-award"></i><span>กิจกรรม</span>
+        </div>
+    </nav>
+
+    <script>
+        function switchTab(tabId, element) {
+            // 1. ซ่อนทุก Section
+            document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+            // 2. แสดง Section เป้าหมาย
+            document.getElementById(tabId).classList.add('active');
+            
+            // 3. เปลี่ยนสีปุ่มเมนู
+            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+            element.classList.add('active');
+
+            // 4. เลื่อนขึ้นบนสุดอย่างนุ่มนวล
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
