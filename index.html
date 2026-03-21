@@ -18,7 +18,8 @@
 
     <!-- Open Graph (แชร์ Facebook / LINE) -->
     <meta property="og:title" content="Portfolio - Jesada Sansupha">
-    <meta property="og:description" content="เว็บไซต์ Portfolio เจษฎา แสนสุภา แสดงผลงาน ทักษะ และประสบการณ์ด้านการพัฒนาเว็บไซต์">
+    <meta property="og:description"
+        content="เว็บไซต์ Portfolio เจษฎา แสนสุภา แสดงผลงาน ทักษะ และประสบการณ์ด้านการพัฒนาเว็บไซต์">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://suphakub.github.io/portfolio/">
     <meta property="og:image" content="https://github.com/Suphakub/portfolio/blob/main/dies/images/profile-5.jpg">
@@ -483,6 +484,124 @@
             color: var(--primary);
         }
 
+        .edu-timeline-large {
+            position: relative;
+            padding-left: 25px;
+            margin-left: 10px;
+            border-left: 3px solid #e2e8f0;
+        }
+
+        .edu-item-large {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .edu-item-large:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-dot {
+            position: absolute;
+            left: -35.5px;
+            /* ปรับให้อยู่กึ่งกลางเส้น */
+            top: 25px;
+            width: 18px;
+            height: 18px;
+            background: var(--secondary);
+            border: 4px solid #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+            z-index: 2;
+        }
+
+        .edu-card-content {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 30px;
+            padding: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .edu-card-content:active {
+            transform: scale(0.98);
+        }
+
+        .edu-logo-100 {
+            width: 50px;
+            height: 50px;
+            flex-shrink: 0;
+            border-radius: 12px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .edu-logo-100 img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .edu-text-group {
+            flex: 1;
+        }
+
+        .edu-title-text {
+            margin: 0 0 5px;
+            color: var(--primary);
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .edu-major-text {
+            color: var(--text-main);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .edu-school-text {
+            color: var(--secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .edu-date-badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent);
+            font-size: 0.75rem;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        /* กรณีหน้าจอเล็กมาก ให้โลโก้กับข้อความเรียงบนล่าง */
+        @media (max-width: 380px) {
+            .edu-card-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .edu-school-text {
+                justify-content: center;
+            }
+        }
+
         @keyframes pulse {
             0% {
                 box-shadow: 0 0 0 0 var(--accent-glow);
@@ -601,9 +720,9 @@
                             <p
                                 style="margin: 0 0 0 10px; font-size: 0.9rem; color: var(--text-main); line-height: 1.6; font-style: italic; font-weight: 500;">
                                 "ข้าพเจ้ามองว่าการจะเป็น <span
-                                    style="color: var(--secondary); font-weight: 700;">ครูอาชีพ</span>
+                                    style="color: var(--secondary); font-weight: 700;">มืออาชีพ</span>
                                 ได้ต้องอาศัยประสบการณ์ ความรู้ ทักษะ และพัฒนาตนเองอยู่เสมอ...
-                                เหมือนกับการพัฒนาโปรแกรมประยุกต์"
+                                เพื่อให้สามารถทำงานได้อย่างมีประสิทธิภาพ และสร้างสรรค์ผลงานที่มีคุณภาพสูงสุด"
                             </p>
                         </div>
                     </div>
@@ -647,13 +766,14 @@
                             <div
                                 style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px;">
                                 <h4 style="margin: 0; color: var(--text-main); font-size: 1.05rem;">
-                                    ศูนย์การเปลี่ยนแปลงสภาพภูมิอากาศ
+                                    ศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ
                                 </h4>
                                 <span
                                     style="background: rgba(16, 185, 129, 0.1); color: var(--accent); font-size: 0.65rem; padding: 4px 8px; border-radius: 12px; font-weight: 600; letter-spacing: 0.5px;">NEW</span>
                             </div>
                             <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">
-                                ออกแบบและพัฒนาเว็บไซต์สำหรับศูนย์การเปลี่ยนแปลงสภาพภูมิอากาศ (CCIC.dcce.go.th)</p>
+                                ออกแบบและพัฒนาเว็บไซต์สำหรับศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ
+                                (https://ccic.dcce.go.th)</p>
                         </div>
                     </div>
                 </div>
@@ -839,7 +959,8 @@
                         </div>
                         <div style="flex: 1;">
                             <div style="font-size: 0.75rem; color: var(--text-muted);">SITE</div>
-                            <div style="font-size: 0.95rem; color: var(--text-main); font-weight: 600;">Website Portfolio
+                            <div style="font-size: 0.95rem; color: var(--text-main); font-weight: 600;">Website
+                                Portfolio
                             </div>
                         </div>
                         <i class="fas fa-external-link-alt" style="color: #cbd5e1; font-size: 0.8rem;"></i>
@@ -847,39 +968,137 @@
                 </div>
             </div>
 
-            <div class="card">
-                <h3 class="section-title"><i class="fas fa-bolt"></i> ความเชี่ยวชาญ (Skills)</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                    <span class="skill-tag expert">UX/UI Design</span>
-                    <span class="skill-tag expert">Web Development</span>
-                    <span class="skill-tag expert">System Security</span>
-                    <span class="skill-tag">Network Setup</span>
-                    <span class="skill-tag">Graphic Design</span>
-                    <span class="skill-tag">Teaching & Training</span>
-                </div>
-            </div>
+
         </section>
 
         <!--section education-->
         <section id="education">
             <h2 class="section-title"><i class="fas fa-graduation-cap"></i> ประวัติการศึกษา</h2>
-            <div class="card">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background:var(--accent); border-color:#ecfdf5;"></div>
-                        <h4 style="margin:0; font-size:1rem;">ประกาศนียบัตรบัณฑิตวิชาชีพครู</h4>
-                        <div style="color: var(--text-muted); font-size:0.85rem; margin:2px 0;">มหาวิทยาลัยราชภัฏสกลนคร
-                            (2556)</div>
+
+            <div class="card" style="padding: 20px 15px;">
+
+
+
+                <div class="edu-timeline-large">
+
+                    <div class="edu-item-large">
+                        <div class="edu-dot"></div>
+                        <div class="edu-card-content">
+                            <div class="edu-logo-100">
+                                <img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/snru-logo-n.png"
+                                    alt="SNRU Logo">
+                            </div>
+                            <div class="edu-text-group">
+                                <h4 class="edu-title-text">ประกาศนียบัตรบัณฑิตวิชาชีพครู</h4>
+                                <div class="edu-school-text"><i class="fas fa-university"></i> มหาวิทยาลัยราชภัฏสกลนคร
+                                </div>
+                                <div class="edu-date-badge">
+                                    <i class="far fa-calendar-alt"></i> สำเร็จการศึกษาเมื่อ : 5 พฤศจิกายน 2556
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="timeline-item" style="margin-bottom:0;">
-                        <div class="timeline-dot" style="background:var(--accent); border-color:#ecfdf5;"></div>
-                        <h4 style="margin:0; font-size:1rem;">ป.ตรี บธ.บ. คอมพิวเตอร์ธุรกิจ</h4>
-                        <div style="color: var(--text-muted); font-size:0.85rem; margin:2px 0;">มหาวิทยาลัยราชภัฏสกลนคร
-                            (2554)</div>
+
+                    <div class="edu-item-large">
+                        <div class="edu-dot"></div>
+                        <div class="edu-card-content">
+                            <div class="edu-logo-100">
+                                <img src="./dies/images/snru-logo-n.png"
+                                    alt="SNRU Logo">
+                            </div>
+                            <div class="edu-text-group">
+                                <h4 class="edu-title-text">ปริญญาตรี</h4>
+                                <div class="edu-major-text">บธ.บ.คอมพิวเตอร์ธุรกิจ</div>
+                                <div class="edu-school-text"><i class="fas fa-university"></i> มหาวิทยาลัยราชภัฏสกลนคร
+                                </div>
+                                <div class="edu-date-badge">
+                                    <i class="far fa-calendar-alt"></i> สำเร็จการศึกษาเมื่อ : 19 ตุลาคม 2554
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="edu-item-large">
+                        <div class="edu-dot"
+                            style="background: #f59e0b; box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);"></div>
+                        <div class="edu-card-content">
+                            <div class="edu-logo-100">
+                                <img src="./dies/images/logo-tech.png"
+                                    alt="School Logo">
+                            </div>
+                            <div class="edu-text-group">
+                                <h4 class="edu-title-text">ประกาศนียบัตรวิชาชีพชั้นสูง</h4>
+                                <div class="edu-major-text">สาขา คอมพิวเตอร์ธุรกิจ</div>
+                                <div class="edu-school-text" style="color: #f59e0b;"><i class="fas fa-school"></i>
+                                    โรงเรียนเทคโนโลยีธาตุพนม</div>
+                                <div class="edu-date-badge">
+                                    <i class="far fa-calendar-alt"></i> สำเร็จการศึกษาเมื่อ : 16 มีนาคม 2552
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="edu-item-large">
+                        <div class="edu-dot"
+                            style="background: #f59e0b; box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);"></div>
+                        <div class="edu-card-content">
+                            <div class="edu-logo-100">
+                                <img src="./dies/images/logo-tech.png"
+                                    alt="School Logo">
+                            </div>
+                            <div class="edu-text-group">
+                                <h4 class="edu-title-text">ประกาศนียบัตรวิชาชีพ</h4>
+                                <div class="edu-major-text">สาขา คอมพิวเตอร์ธุรกิจ</div>
+                                <div class="edu-school-text" style="color: #f59e0b;"><i class="fas fa-school"></i>
+                                    โรงเรียนเทคโนโลยีธาตุพนม</div>
+                                <div class="edu-date-badge">
+                                    <i class="far fa-calendar-alt"></i> สำเร็จการศึกษาเมื่อ : 16 มีนาคม 2550
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="edu-item-large">
+                        <div class="edu-dot"
+                            style="background: #8b5cf6; box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);"></div>
+                        <div class="edu-card-content">
+                            <div class="edu-logo-100">
+                                <img src="./dies/images/1048190489.jpg"
+                                    alt="School Logo">
+                            </div>
+                            <div class="edu-text-group">
+                                <h4 class="edu-title-text">มัธยมศึกษาตอนต้น</h4>
+                                <div class="edu-school-text" style="color: #8b5cf6;"><i class="fas fa-school"></i>
+                                    โรงเรียนธรรมากรวิทยานุกูล</div>
+                                <div class="edu-date-badge">
+                                    <i class="far fa-calendar-alt"></i> สำเร็จการศึกษาเมื่อ : 22 มีนาคม 2547
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="edu-item-large">
+                        <div class="edu-dot"
+                            style="background: #ec4899; box-shadow: 0 0 0 2px rgba(236, 72, 153, 0.2);"></div>
+                        <div class="edu-card-content">
+                            <div class="edu-logo-100">
+                                <img src="./dies/images/unnamed.png"
+                                    alt="School Logo">
+                            </div>
+                            <div class="edu-text-group">
+                                <h4 class="edu-title-text">ประถมศึกษา</h4>
+                                <div class="edu-school-text" style="color: #ec4899;"><i class="fas fa-school"></i>
+                                    โรงเรียนบ้านหนองหอยใหญ่</div>
+                                <div class="edu-date-badge">
+                                    <i class="far fa-calendar-alt"></i> สำเร็จการศึกษาเมื่อ : 28 มีนาคม 2544
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </section>      
+        </section>
 
         <!--section skills-->
         <section id="skills">
@@ -900,7 +1119,7 @@
                     </div>
                 </div>
             </div>
-        </section>          
+        </section>
 
         <!--section experience-->
         <section id="experience">
@@ -1008,7 +1227,7 @@
             </div>
         </section>
 
-        <!--section activities-->        
+        <!--section activities-->
         <section id="activities">
             <h2 class="section-title"><i class="fas fa-chalkboard-teacher"></i> หลักสูตรการอบรม</h2>
             <div class="card" style="padding: 15px;">
