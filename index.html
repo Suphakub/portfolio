@@ -4,7 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <title>Portfolio - Jesada Sansupha</title>
+
+    <!-- SEO พื้นฐาน -->
+    <meta name="description" content="Portfolio ของ Jesada Sansupha แสดงผลงาน ทักษะ และประสบการณ์ด้านการพัฒนาเว็บไซต์">
+    <meta name="keywords"
+        content="Jesada Sansupha, เจษฎา แสนสุภา , Portfolio, เว็บดีไซน์, UX/UI, Graphics Design, เจ้าหน้าที่ระบบงานคอมพิวเตอร์">
+    <meta name="author" content="Jesada Sansupha">
+
+    <!-- สำหรับ Google -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (แชร์ Facebook / LINE) -->
+    <meta property="og:title" content="Portfolio - Jesada Sansupha">
+    <meta property="og:description" content="รวมผลงานและโปรเจกต์ของ Jesada Sansupha">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://suphakub.github.io/portfolio/">
+    <meta property="og:image" content="https://suphakub.github.io/portfolio/preview.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portfolio - Jesada Sansupha">
+    <meta name="twitter:description" content="Portfolio และผลงานของ Jesada Sansupha">
+    <meta name="twitter:image" content="https://suphakub.github.io/portfolio/preview.jpg">
+
 
     <link
         href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Inter:wght@400;600&display=swap"
@@ -223,7 +247,7 @@
 
         .stat-box {
             background: rgba(255, 255, 255, 0.9);
-            padding: 15px;
+            padding: 20px;
             border-radius: 16px;
             text-align: center;
             border: 1px solid rgba(0, 0, 0, 0.05);
@@ -476,10 +500,10 @@
 </head>
 
 <body>
-
     <div class="bg-shape shape-1"></div>
     <div class="bg-shape shape-2"></div>
 
+    <!--Header-->
     <header>
         <div class="app-title"><i class="fa-brands fa-connectdevelop"></i> PORTFOLIO
             <span style="font-size: 0.8rem; color: var(--text-muted);">เจษฎา แสนสุภา</span>
@@ -491,8 +515,9 @@
         </div>
     </header>
 
+    <!--container-->
     <div class="container">
-
+        <!--section home-->
         <section id="home" class="active">
             <div
                 style="background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 24px; padding: 40px 20px 30px; color: white; position: relative; overflow: hidden; margin-bottom: 25px; box-shadow: 0 15px 30px rgba(30, 58, 138, 0.2); text-align: center;">
@@ -505,8 +530,7 @@
                 </div>
 
                 <div style="position: relative; width: 250px; height: 250px; margin: 0 auto 15px; z-index: 1;">
-                    <img src="./dies/images/profile-4.jpg"
-                        alt="Jesada"
+                    <img src="./dies/images/profile-4.jpg" alt="Jesada"
                         style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid rgba(255, 255, 255, 0.9); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);">
                     <span
                         style="position: absolute; bottom: 5px; right: 5px; width: 22px; height: 22px; background-color: #10b981; border: 3px solid white; border-radius: 50%; box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);"></span>
@@ -523,27 +547,82 @@
                     <i class="fas fa-code"></i> UX/UI • Graphics Design • Website Design
                 </div>
             </div>
-
-            <div class="stat-grid">
+            <div class="stat-grid" style="margin-bottom: 25px;">
                 <div class="stat-box"
-                    style="background: white; border: 1px solid rgba(0,0,0,0.03); box-shadow: 0 8px 20px rgba(0,0,0,0.04); border-radius: 20px; cursor: pointer; transition: transform 0.2s;"
+                    style="background: white; border: 1px solid rgba(0,0,0,0.03); box-shadow: 0 8px 30px rgba(0,0,0,0.04); border-radius: 20px; cursor: pointer; transition: transform 0.2s; position: relative; overflow: hidden;"
                     onclick="switchTab('experience', document.querySelectorAll('.nav-item')[4])"
                     onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
+                    <div style="font-size: 1.4rem; color: var(--secondary); margin-bottom: 5px;"><i
+                            class="fas fa-briefcase"></i></div>
                     <div class="stat-num"
                         style="background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                        13+</div>
-                    <div class="stat-label" style="margin-top: 4px;">ปี ประสบการณ์</div>
+                        10+</div>
+                    <div class="stat-label" style="margin-top: 2px;">อาจารย์ภาควิชาคอมพิวเตอร์</div>
                 </div>
+
                 <div class="stat-box"
-                    style="background: white; border: 1px solid rgba(0,0,0,0.03); box-shadow: 0 8px 20px rgba(0,0,0,0.04); border-radius: 20px; cursor: pointer; transition: transform 0.2s;"
+                    style="background: white; border: 1px solid rgba(0,0,0,0.03); box-shadow: 0 8px 30px rgba(0,0,0,0.04); border-radius: 20px; cursor: pointer; transition: transform 0.2s; position: relative; overflow: hidden;"
                     onclick="switchTab('portfolio', document.querySelectorAll('.nav-item')[5])"
                     onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
+                    <div style="font-size: 1.4rem; color: var(--accent); margin-bottom: 5px;"><i
+                            class="fas fa-laptop-code"></i></div>
                     <div class="stat-num"
                         style="background: linear-gradient(135deg, #059669, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                        10+</div>
-                    <div class="stat-label" style="margin-top: 4px;">โปรเจกต์ & ระบบ</div>
+                        4+</div>
+                    <div class="stat-label" style="margin-top: 2px;">เจ้าหน้าที่ระบบงานคอมพิวเตอร์</div>
                 </div>
             </div>
+
+            <div class="card"
+                style="padding: 25px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.04); background: linear-gradient(145deg, #ffffff, #f8fafc); position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: transform 0.2s;"
+                onmousedown="this.style.transform='scale(0.98)'" onmouseup="this.style.transform='scale(1)'">
+
+                <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+
+                    <div style="flex: 1; min-width: 200px; position: relative; z-index: 1;">
+
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div
+                                    style="width: 35px; height: 35px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.2)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 1.1rem;">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h4 style="margin: 0; color: var(--primary); font-size: 1rem;">Vision & Mindset</h4>
+                            </div>
+                            <span
+                                style="background: rgba(16, 185, 129, 0.1); color: var(--accent); font-size: 0.65rem; padding: 4px 10px; border-radius: 12px; font-weight: 600; letter-spacing: 0.5px; border: 1px solid rgba(16, 185, 129, 0.2);">มุมมอง</span>
+                        </div>
+
+                        <div
+                            style="position: relative; padding-left: 5px; border-left: 3px solid var(--secondary); margin-top: 15px; margin-left: 5px;">
+                            <i class="fas fa-quote-left"
+                                style="font-size: 1.2rem; color: var(--secondary); opacity: 0.15; position: absolute; top: -12px; left: -5px;"></i>
+                            <p
+                                style="margin: 0 0 0 10px; font-size: 0.9rem; color: var(--text-main); line-height: 1.6; font-style: italic; font-weight: 500;">
+                                "ข้าพเจ้ามองว่าการจะเป็น <span
+                                    style="color: var(--secondary); font-weight: 700;">ครูอาชีพ</span>
+                                ได้ต้องอาศัยประสบการณ์ ความรู้ ทักษะ และพัฒนาตนเองอยู่เสมอ...
+                                เหมือนกับการพัฒนาโปรแกรมประยุกต์"
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        style="flex: 0 0 110px; display: flex; justify-content: center; position: relative; z-index: 1;">
+                        <div
+                            style="width: 110px; height: 140px; border-radius: 16px; overflow: hidden; border: 4px solid #ffffff; box-shadow: 0 8px 20px rgba(0,0,0,0.08); background-color: #f1f5f9;">
+                            <img src="./dies/images/profile-3.jpg" alt="Profile"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+
+                </div>
+
+                <i class="fas fa-quote-right"
+                    style="position: absolute; bottom: -10px; right: 100px; font-size: 5rem; color: rgba(59, 130, 246, 0.03); z-index: 0; transform: rotate(10deg);"></i>
+            </div>
+
 
             <div
                 style="display: flex; justify-content: space-between; align-items: center; margin-top: 30px; margin-bottom: 15px;">
@@ -554,7 +633,7 @@
                         class="fas fa-chevron-right" style="font-size: 0.7rem;"></i></span>
             </div>
 
-            <a href="https://greenarea.dcce.go.th/" target="_blank"
+            <a href="https://ccic.dcce.go.th/" target="_blank"
                 style="text-decoration: none; color: inherit; display: block;">
                 <div class="card"
                     style="padding: 18px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.03); transition: transform 0.2s;"
@@ -567,37 +646,204 @@
                         <div style="flex: 1;">
                             <div
                                 style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px;">
-                                <h4 style="margin: 0; color: var(--text-main); font-size: 1.05rem;">Green Area Dashboard
+                                <h4 style="margin: 0; color: var(--text-main); font-size: 1.05rem;">
+                                    ศูนย์การเปลี่ยนแปลงสภาพภูมิอากาศ
                                 </h4>
                                 <span
                                     style="background: rgba(16, 185, 129, 0.1); color: var(--accent); font-size: 0.65rem; padding: 4px 8px; border-radius: 12px; font-weight: 600; letter-spacing: 0.5px;">NEW</span>
                             </div>
                             <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">
-                                ระบบดึงข้อมูล API สรุปพื้นที่สีเขียวบนแดชบอร์ด</p>
+                                ออกแบบและพัฒนาเว็บไซต์สำหรับศูนย์การเปลี่ยนแปลงสภาพภูมิอากาศ (CCIC.dcce.go.th)</p>
                         </div>
                     </div>
                 </div>
             </a>
+
+            <div class="card"
+                style="padding: 35px 20px; text-align: center; border-top: 5px solid var(--secondary); border-radius: 16px; background: linear-gradient(to bottom, #ffffff, #f8fafc); box-shadow: 0 10px 30px rgba(59, 130, 246, 0.08); margin-top: 20px; position: relative; overflow: hidden;">
+
+                <div
+                    style="position: absolute; top: -30px; right: -30px; width: 100px; height: 100px; background: rgba(59, 130, 246, 0.05); border-radius: 50%;">
+                </div>
+                <div
+                    style="position: absolute; bottom: -20px; left: -20px; width: 80px; height: 80px; background: rgba(16, 185, 129, 0.05); border-radius: 50%;">
+                </div>
+
+                <div style="position: relative; z-index: 1;">
+                    <div style="margin-bottom: 20px;">
+                        <div
+                            style="width: 65px; height: 65px; background: white; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--secondary); box-shadow: 0 8px 20px rgba(0,0,0,0.06); margin-bottom: 12px;">
+                            <i class="fas fa-praying-hands"></i>
+                        </div>
+                        <h3
+                            style="margin: 0; color: var(--primary); font-size: 1.35rem; font-weight: 700; letter-spacing: 0.5px;">
+                            THANK YOU</h3>
+                        <div
+                            style="font-size: 0.85rem; color: var(--accent); font-weight: 600; margin-top: 5px; letter-spacing: 0.5px;">
+                            ขอขอบพระคุณจากใจ</div>
+                    </div>
+
+                    <p
+                        style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 25px; padding: 0 10px;">
+                        ข้าพเจ้าหวังเป็นอย่างยิ่งว่าเว็บไซต์ PORTFOLIO
+                        ของข้าพเจ้าจะเป็นประโยชน์ต่อท่านคณะกรรมการผู้ทรงคุณวุฒิ
+                        ได้ทำความรู้จักตัวตนของข้าพเจ้าไม่มากก็น้อย หากมีข้อผิดพลาดประการใด ข้าพเจ้ากราบขออภัยมา ณ
+                        โอกาสนี้ด้วยครับ
+                    </p>
+
+                    <div
+                        style="display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 30px;">
+                        <a href="tel:0828414124"
+                            style="text-decoration: none; background: white; padding: 8px 16px; border-radius: 20px; font-size: 0.8rem; color: var(--text-main); font-weight: 500; box-shadow: 0 2px 10px rgba(0,0,0,0.03); display: flex; align-items: center; gap: 8px; border: 1px solid #f1f5f9;">
+                            <i class="fas fa-phone-alt" style="color: var(--secondary);"></i> 082-8414124
+                        </a>
+                        <a href="mailto:virusnakub@gmail.com"
+                            style="text-decoration: none; background: white; padding: 8px 16px; border-radius: 20px; font-size: 0.8rem; color: var(--text-main); font-weight: 500; box-shadow: 0 2px 10px rgba(0,0,0,0.03); display: flex; align-items: center; gap: 8px; border: 1px solid #f1f5f9;">
+                            <i class="fas fa-envelope" style="color: #f59e0b;"></i> ส่งอีเมล
+                        </a>
+                    </div>
+
+                    <a href="https://sites.google.com/view/sansupha1" target="_blank"
+                        style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(135deg, var(--primary), #2563eb); color: white; padding: 14px 28px; border-radius: 30px; text-decoration: none; font-size: 0.95rem; font-weight: 600; box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3); transition: all 0.3s ease;"
+                        onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 30px rgba(30, 58, 138, 0.4)';"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(30, 58, 138, 0.3)';">
+                        <i class="fas fa-external-link-alt"></i> ไปยังหน้า Teacher’s role
+                    </a>
+                </div>
+            </div>
         </section>
 
+        <!--section profile-->
         <section id="profile">
-            <div class="card" style="text-align: center;">
-                <div class="profile-img-wrap">
-                    <img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/249662.jpg" alt="Jesada"
-                        class="profile-img">
-                    <div class="badge-pro"><i class="fas fa-check"></i></div>
+            <div class="card" style="text-align: center; position: relative; overflow: hidden;">
+                <div
+                    style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(16, 185, 129, 0.05)); border-radius: 50%; z-index: 0;">
                 </div>
-                <h2 style="margin: 0; font-size: 1.4rem; color: var(--primary);">เจษฎา แสนสุภา (เจษ)</h2>
-                <p style="margin: 5px 0 15px; color: var(--text-muted); font-size: 0.9rem;">
-                    เจ้าหน้าที่ระบบงานคอมพิวเตอร์ / นักพัฒนา</p>
 
-                <div style="display: flex; justify-content: center; gap: 12px;">
+                <div style="position: relative; z-index: 1;">
+                    <div class="profile-img-wrap">
+                        <img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/249662.jpg" alt="Jesada"
+                            class="profile-img">
+                        <div class="badge-pro"><i class="fas fa-check"></i></div>
+                    </div>
+                    <h2 style="margin: 0; font-size: 1.4rem; color: var(--primary); font-weight: 700;">นายเจษฎา แสนสุภา
+                    </h2>
+                    <p
+                        style="margin: 2px 0 15px; color: var(--secondary); font-size: 0.9rem; font-weight: 600; letter-spacing: 1px;">
+                        MR. JESADA SANSUPHA</p>
+
+                    <div
+                        style="background: rgba(241, 245, 249, 0.7); border-radius: 12px; padding: 15px; margin-top: 15px; border-left: 4px solid var(--accent);">
+                        <i class="fas fa-quote-left"
+                            style="color: var(--accent); opacity: 0.5; font-size: 1.2rem; margin-bottom: 5px; display: block; text-align: left;"></i>
+                        <p
+                            style="margin: 0; font-size: 0.85rem; color: var(--text-main); font-style: italic; line-height: 1.6;">
+                            “ย้ำคิด ย้ำทำ งานที่รับผิดชอบ เพราะผลสะท้อนของงาน บ่งบอกประสิทธิภาพของตัวเราเอง”
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="section-title"><i class="fas fa-id-card"></i> ข้อมูลส่วนตัว</h3>
+
+                <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem;">
+                    <li
+                        style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #cbd5e1;">
+                        <span style="color: var(--text-muted);"><i class="fas fa-user fa-fw"
+                                style="color: var(--secondary); margin-right: 5px;"></i> ชื่อเล่น</span>
+                        <span style="font-weight: 500; color: var(--text-main);">เจษ</span>
+                    </li>
+                    <li
+                        style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #cbd5e1;">
+                        <span style="color: var(--text-muted);"><i class="fas fa-birthday-cake fa-fw"
+                                style="color: #f59e0b; margin-right: 5px;"></i> เกิดวันที่</span>
+                        <span style="font-weight: 500; color: var(--text-main);">19 ธันวาคม</span>
+                    </li>
+                    <li
+                        style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #cbd5e1;">
+                        <span style="color: var(--text-muted);"><i class="fas fa-flag fa-fw"
+                                style="color: #ef4444; margin-right: 5px;"></i> สัญชาติ / เชื้อชาติ</span>
+                        <span style="font-weight: 500; color: var(--text-main);">ไทย / ไทย</span>
+                    </li>
+                    <li
+                        style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #cbd5e1;">
+                        <span style="color: var(--text-muted);"><i class="fas fa-tint fa-fw"
+                                style="color: #ec4899; margin-right: 5px;"></i> หมู่โลหิต</span>
+                        <span style="font-weight: 500; color: var(--text-main);">O</span>
+                    </li>
+                    <li
+                        style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #cbd5e1;">
+                        <span style="color: var(--text-muted);"><i class="fas fa-heart fa-fw"
+                                style="color: #db2777; margin-right: 5px;"></i> สถานภาพ</span>
+                        <span style="font-weight: 500; color: var(--text-main);">สมรส</span>
+                    </li>
+                    <li
+                        style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #cbd5e1;">
+                        <span style="color: var(--text-muted);"><i class="fas fa-users fa-fw"
+                                style="color: var(--primary); margin-right: 5px;"></i> พี่น้อง</span>
+                        <span style="font-weight: 500; color: var(--text-main);">พี่น้องร่วมกัน 3 คน</span>
+                    </li>
+                    <li style="display: flex; flex-direction: column; padding: 10px 0; gap: 5px;">
+                        <span style="color: var(--text-muted);"><i class="fas fa-map-marker-alt fa-fw"
+                                style="color: var(--accent); margin-right: 5px;"></i> ที่อยู่</span>
+                        <span style="font-weight: 500; color: var(--text-main); line-height: 1.5; padding-left: 25px;">
+                            138 หมู่ที่ 11 ตำบลพุ่มแก<br>
+                            อำเภอนาแก จังหวัดนครพนม 48130
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="section-title"><i class="fas fa-address-book"></i> ช่องทางการติดต่อ</h3>
+                <div style="display: grid; grid-template-columns: 1fr; gap: 10px;">
                     <a href="tel:0828414124"
-                        style="background: var(--primary); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.9rem; font-weight: 500; box-shadow: 0 4px 10px rgba(30,58,138,0.2);"><i
-                            class="fas fa-phone-alt"></i> โทรติดต่อ</a>
+                        style="display: flex; align-items: center; gap: 15px; background: white; padding: 12px 15px; border-radius: 12px; text-decoration: none; border: 1px solid #e2e8f0; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: 0.2s;"
+                        onmouseover="this.style.borderColor='var(--secondary)'"
+                        onmouseout="this.style.borderColor='#e2e8f0'">
+                        <div
+                            style="width: 40px; height: 40px; background: rgba(59, 130, 246, 0.1); color: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">เบอร์โทรศัพท์</div>
+                            <div style="font-size: 0.95rem; color: var(--text-main); font-weight: 600;">082 - 8414124
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-right" style="color: #cbd5e1; font-size: 0.8rem;"></i>
+                    </a>
+
                     <a href="mailto:virusnakub@gmail.com"
-                        style="background: white; color: var(--primary); padding: 10px 20px; border-radius: 25px; text-decoration: none; font-size: 0.9rem; font-weight: 500; border: 1px solid var(--primary);"><i
-                            class="fas fa-envelope"></i> ส่งอีเมล</a>
+                        style="display: flex; align-items: center; gap: 15px; background: white; padding: 12px 15px; border-radius: 12px; text-decoration: none; border: 1px solid #e2e8f0; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: 0.2s;"
+                        onmouseover="this.style.borderColor='#f59e0b'" onmouseout="this.style.borderColor='#e2e8f0'">
+                        <div
+                            style="width: 40px; height: 40px; background: rgba(245, 158, 11, 0.1); color: #f59e0b; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">อีเมล</div>
+                            <div style="font-size: 0.95rem; color: var(--text-main); font-weight: 600;">
+                                virusnakub@gmail.com</div>
+                        </div>
+                        <i class="fas fa-chevron-right" style="color: #cbd5e1; font-size: 0.8rem;"></i>
+                    </a>
+
+                    <a href="https://sites.google.com/view/sansupha1" target="_blank"
+                        style="display: flex; align-items: center; gap: 15px; background: white; padding: 12px 15px; border-radius: 12px; text-decoration: none; border: 1px solid #e2e8f0; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: 0.2s;"
+                        onmouseover="this.style.borderColor='var(--accent)'"
+                        onmouseout="this.style.borderColor='#e2e8f0'">
+                        <div
+                            style="width: 40px; height: 40px; background: rgba(16, 185, 129, 0.1); color: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">SITE</div>
+                            <div style="font-size: 0.95rem; color: var(--text-main); font-weight: 600;">ห้องเรียนออนไลน์
+                            </div>
+                        </div>
+                        <i class="fas fa-external-link-alt" style="color: #cbd5e1; font-size: 0.8rem;"></i>
+                    </a>
                 </div>
             </div>
 
@@ -614,6 +860,49 @@
             </div>
         </section>
 
+        <!--section education-->
+        <section id="education">
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> ประวัติการศึกษา</h2>
+            <div class="card">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot" style="background:var(--accent); border-color:#ecfdf5;"></div>
+                        <h4 style="margin:0; font-size:1rem;">ประกาศนียบัตรบัณฑิตวิชาชีพครู</h4>
+                        <div style="color: var(--text-muted); font-size:0.85rem; margin:2px 0;">มหาวิทยาลัยราชภัฏสกลนคร
+                            (2556)</div>
+                    </div>
+                    <div class="timeline-item" style="margin-bottom:0;">
+                        <div class="timeline-dot" style="background:var(--accent); border-color:#ecfdf5;"></div>
+                        <h4 style="margin:0; font-size:1rem;">ป.ตรี บธ.บ. คอมพิวเตอร์ธุรกิจ</h4>
+                        <div style="color: var(--text-muted); font-size:0.85rem; margin:2px 0;">มหาวิทยาลัยราชภัฏสกลนคร
+                            (2554)</div>
+                    </div>
+                </div>
+            </div>
+        </section>      
+
+        <!--section skills-->
+        <section id="skills">
+            <h2 class="section-title"><i class="fas fa-bolt"></i> ความเชี่ยวชาญ</h2>
+            <div class="card">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot" style="background:var(--accent); border-color:#ecfdf5;"></div>
+                        <h4 style="margin:0; font-size:1rem;">ประกาศนียบัตรบัณฑิตวิชาชีพครู</h4>
+                        <div style="color: var(--text-muted); font-size:0.85rem; margin:2px 0;">มหาวิทยาลัยราชภัฏสกลนคร
+                            (2556)</div>
+                    </div>
+                    <div class="timeline-item" style="margin-bottom:0;">
+                        <div class="timeline-dot" style="background:var(--accent); border-color:#ecfdf5;"></div>
+                        <h4 style="margin:0; font-size:1rem;">ป.ตรี บธ.บ. คอมพิวเตอร์ธุรกิจ</h4>
+                        <div style="color: var(--text-muted); font-size:0.85rem; margin:2px 0;">มหาวิทยาลัยราชภัฏสกลนคร
+                            (2554)</div>
+                    </div>
+                </div>
+            </div>
+        </section>          
+
+        <!--section experience-->
         <section id="experience">
             <h2 class="section-title"><i class="fas fa-briefcase"></i> ประสบการณ์ทำงาน</h2>
             <div class="card">
@@ -669,6 +958,7 @@
             </div>
         </section>
 
+
         <section id="portfolio">
             <h2 class="section-title"><i class="fas fa-laptop-code"></i> ระบบและแอปพลิเคชันที่พัฒนา</h2>
             <div class="grid-2">
@@ -718,6 +1008,7 @@
             </div>
         </section>
 
+        <!--section activities-->        
         <section id="activities">
             <h2 class="section-title"><i class="fas fa-chalkboard-teacher"></i> หลักสูตรการอบรม</h2>
             <div class="card" style="padding: 15px;">
@@ -760,6 +1051,8 @@
             </div>
         </section>
     </div>
+
+    <!--Navbar-->
     <nav class="bottom-nav">
         <div class="nav-item" onclick="switchTab('profile', this)">
             <i class="fas fa-user"></i><span>ประวัติ</span>
@@ -787,6 +1080,7 @@
         </div>
     </nav>
 
+    <!--script-->
     <script>
         function switchTab(tabId, element) {
             // 1. ซ่อนทุก Section
