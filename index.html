@@ -196,7 +196,7 @@
         .home-banner {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 20px;
-            padding: 30px 20px;
+            padding: 60px 20px;
             color: white;
             position: relative;
             overflow: hidden;
@@ -444,7 +444,7 @@
         }
 
         .nav-fab-container.active .nav-fab {
-            transform: scale(1.05);
+            transform: scale(0.9);
             box-shadow: 0 10px 25px rgba(59, 130, 246, 0.6);
         }
 
@@ -481,51 +481,104 @@
     <div class="bg-shape shape-2"></div>
 
     <header>
-        <div class="app-title"><i class="fa-brands fa-connectdevelop"></i> Jesada.Dev</div>
+        <div class="app-title"><i class="fa-brands fa-connectdevelop"></i> PORTFOLIO
+            <span style="font-size: 0.8rem; color: var(--text-muted);">เจษฎา แสนสุภา</span>
+        </div>
+
         <div
             style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 600; color: var(--primary);">
-            <span class="status-dot"></span> Ready for Work
+            <span class="status-dot"></span> ขอบคุณที่แวะมาชมผลงานครับ!
         </div>
     </header>
 
     <div class="container">
 
         <section id="home" class="active">
-            <div class="home-banner">
-                <h2 style="margin: 0 0 5px; font-size: 1.6rem;">สวัสดีครับ 👋</h2>
-                <p style="margin: 0 0 15px; opacity: 0.9; font-size: 0.95rem;">ผม เจษฎา แสนสุภา<br>Programmer & System
-                    Developer</p>
+            <div
+                style="background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 24px; padding: 40px 20px 30px; color: white; position: relative; overflow: hidden; margin-bottom: 25px; box-shadow: 0 15px 30px rgba(30, 58, 138, 0.2); text-align: center;">
+
                 <div
-                    style="background: rgba(0,0,0,0.2); display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; backdrop-filter: blur(5px);">
+                    style="position: absolute; top: -20px; right: -20px; width: 120px; height: 120px; background: rgba(255, 255, 255, 0.08); border-radius: 50%;">
+                </div>
+                <div
+                    style="position: absolute; bottom: -30px; left: -30px; width: 150px; height: 150px; background: rgba(255, 255, 255, 0.08); border-radius: 50%;">
+                </div>
+
+                <div style="position: relative; width: 250px; height: 250px; margin: 0 auto 15px; z-index: 1;">
+                    <img src="/dies/images/profile-4.jpg"
+                        alt="Jesada"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid rgba(255, 255, 255, 0.9); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);">
+                    <span
+                        style="position: absolute; bottom: 5px; right: 5px; width: 22px; height: 22px; background-color: #10b981; border: 3px solid white; border-radius: 50%; box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);"></span>
+                </div>
+
+                <h2 style="margin: 0 0 5px; font-size: 1.8rem; font-weight: 700; z-index: 1; position: relative;">
+                    สวัสดีครับ 👋</h2>
+                <h3 style="margin: 0 0 5px; font-size: 1.15rem; font-weight: 500; z-index: 1; position: relative;">ผม
+                    เจษฎา แสนสุภา</h3>
+                <p style="margin: 0 0 18px; font-size: 0.9rem; opacity: 0.85; z-index: 1; position: relative;">
+                    Programmer & System Developer</p>
+
+                <div
+                    style="background: rgba(255, 255, 255, 0.15); display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; border-radius: 30px; font-size: 0.85rem; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); z-index: 1; position: relative; font-weight: 300;">
                     <i class="fas fa-code"></i> UX/UI • Coding • Security
                 </div>
             </div>
 
             <div class="stat-grid">
-                <div class="stat-box" onclick="switchTab('experience', document.querySelectorAll('.nav-item')[1])">
-                    <div class="stat-num">13+</div>
-                    <div class="stat-label">ปี ประสบการณ์ทำงาน</div>
+                <div class="stat-box"
+                    style="background: white; border: 1px solid rgba(0,0,0,0.03); box-shadow: 0 8px 20px rgba(0,0,0,0.04); border-radius: 20px; cursor: pointer; transition: transform 0.2s;"
+                    onclick="switchTab('experience', document.querySelectorAll('.nav-item')[4])"
+                    onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
+                    <div class="stat-num"
+                        style="background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        13+</div>
+                    <div class="stat-label" style="margin-top: 4px;">ปี ประสบการณ์</div>
                 </div>
-                <div class="stat-box" onclick="switchTab('portfolio', document.querySelectorAll('.nav-item')[3])">
-                    <div class="stat-num">10+</div>
-                    <div class="stat-label">โปรเจกต์ & ระบบงาน</div>
+                <div class="stat-box"
+                    style="background: white; border: 1px solid rgba(0,0,0,0.03); box-shadow: 0 8px 20px rgba(0,0,0,0.04); border-radius: 20px; cursor: pointer; transition: transform 0.2s;"
+                    onclick="switchTab('portfolio', document.querySelectorAll('.nav-item')[5])"
+                    onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
+                    <div class="stat-num"
+                        style="background: linear-gradient(135deg, #059669, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        10+</div>
+                    <div class="stat-label" style="margin-top: 4px;">โปรเจกต์ & ระบบ</div>
                 </div>
             </div>
 
-            <h3 class="section-title" style="margin-top: 25px;"><i class="fas fa-fire"></i> ผลงานล่าสุด</h3>
-            <div class="card" style="padding: 15px;">
-                <div style="display: flex; gap: 15px; align-items: center;">
-                    <div
-                        style="width: 60px; height: 60px; background: #e0f2fe; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--secondary); font-size: 1.5rem;">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <div>
-                        <h4 style="margin: 0 0 4px; color: var(--text-main);">Green Area Dashboard</h4>
-                        <p style="margin: 0; font-size: 0.8rem; color: var(--text-muted);">ระบบดึงข้อมูล API
-                            สรุปพื้นที่สีเขียวบนแดชบอร์ด</p>
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; margin-top: 30px; margin-bottom: 15px;">
+                <h3 class="section-title" style="margin: 0;"><i class="fas fa-fire"
+                        style="color: #f59e0b; background: rgba(245, 158, 11, 0.1);"></i> ผลงานล่าสุด</h3>
+                <span style="font-size: 0.8rem; color: var(--secondary); cursor: pointer; font-weight: 600;"
+                    onclick="switchTab('portfolio', document.querySelectorAll('.nav-item')[5])">ดูทั้งหมด <i
+                        class="fas fa-chevron-right" style="font-size: 0.7rem;"></i></span>
+            </div>
+
+            <a href="https://greenarea.dcce.go.th/" target="_blank"
+                style="text-decoration: none; color: inherit; display: block;">
+                <div class="card"
+                    style="padding: 18px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.03); transition: transform 0.2s;"
+                    onmousedown="this.style.transform='scale(0.98)'" onmouseup="this.style.transform='scale(1)'">
+                    <div style="display: flex; gap: 16px; align-items: center;">
+                        <div
+                            style="width: 65px; height: 65px; background: linear-gradient(135deg, #e0f2fe, #bae6fd); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--secondary); font-size: 1.8rem; box-shadow: inset 0 2px 4px rgba(255,255,255,0.5), 0 4px 10px rgba(59, 130, 246, 0.1);">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div style="flex: 1;">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; color: var(--text-main); font-size: 1.05rem;">Green Area Dashboard
+                                </h4>
+                                <span
+                                    style="background: rgba(16, 185, 129, 0.1); color: var(--accent); font-size: 0.65rem; padding: 4px 8px; border-radius: 12px; font-weight: 600; letter-spacing: 0.5px;">NEW</span>
+                            </div>
+                            <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">
+                                ระบบดึงข้อมูล API สรุปพื้นที่สีเขียวบนแดชบอร์ด</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </section>
 
         <section id="profile">
