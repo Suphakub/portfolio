@@ -678,6 +678,215 @@
             font-weight: 600;
         }
 
+
+        /* --- กรอบการ์ดประสบการณ์ --- */
+        .exp-card-premium {
+            background: #ffffff;
+            border-radius: 24px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+            margin-bottom: 35px;
+            overflow: hidden;
+        }
+
+        /* --- Modern Image Slider (แสดงภาพเต็ม 100%) --- */
+        .slider-container-premium {
+            position: relative;
+            width: 100%;
+            /* ใช้สัดส่วน 16:10 จะปรับขนาดตามอุปกรณ์อัตโนมัติ */
+            aspect-ratio: 16 / 10;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            /* พื้นหลังสีเข้มดึงภาพให้เด่น */
+        }
+
+        .slider-wrapper-premium {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            height: 100%;
+            scrollbar-width: none;
+        }
+
+        .slider-wrapper-premium::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slide-premium {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide-premium img {
+            width: 100%;
+            height: 100%;
+            /* เปลี่ยนเป็น contain เพื่อไม่ให้ภาพโดนตัด */
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+
+        .slide-premium:hover img {
+            transform: scale(1.03);
+            /* ซูมเบาๆ เวลานำเมาส์ชี้ */
+        }
+
+        /* --- ปุ่มเลื่อน Slider --- */
+        .slider-btn-premium {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            z-index: 10;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .slider-btn-premium:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slider-btn-premium.prev {
+            left: 10px;
+        }
+
+        .slider-btn-premium.next {
+            right: 10px;
+        }
+
+        /* --- Header ข้อมูลบริษัท --- */
+        .exp-header-premium {
+            padding: 25px 20px 0;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .exp-logo-premium {
+            width: 65px;
+            height: 65px;
+            border-radius: 16px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 6px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .exp-logo-premium img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .exp-company-premium {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0 0 6px;
+            line-height: 1.3;
+        }
+
+        .exp-badge-premium {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #f1f5f9;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .exp-badge-premium.active {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent);
+        }
+
+        /* --- Bento Grid ภาระงาน (ลูกเล่นใหม่) --- */
+        .exp-body-premium {
+            padding: 20px;
+        }
+
+        .task-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .task-grid {
+            display: grid;
+            /* ปรับขนาดกล่องอัตโนมัติตามหน้าจอ */
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+        }
+
+        .task-grid a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .task-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            border-radius: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .task-card:hover {
+            background: #ffffff;
+            border-color: var(--secondary);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .task-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .task-text {
+            font-size: 0.8rem;
+            color: var(--text-main);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+
+
         /* กรณีหน้าจอเล็กมาก ให้โลโก้กับข้อความเรียงบนล่าง */
         @media (max-width: 380px) {
             .edu-card-content {
@@ -1436,60 +1645,269 @@
         <!--section experience-->
         <section id="experience">
             <h2 class="section-title"><i class="fas fa-briefcase"></i> ประสบการณ์ทำงาน</h2>
-            <div class="card">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <h4 style="margin:0; font-size:1rem;">เจ้าหน้าที่ระบบงานคอมพิวเตอร์</h4>
-                        <div style="color: var(--secondary); font-size:0.85rem; font-weight:600; margin:4px 0;">
-                            กรมการเปลี่ยนแปลงสภาพภูมิอากาศและสิ่งแวดล้อม</div>
-                        <div style="font-size:0.8rem; color:#94a3b8;"><i class="far fa-calendar-alt"></i> 2566 –
-                            ปัจจุบัน</div>
-                        <ul style="padding-left:15px; font-size:0.85rem; color:var(--text-muted); margin-top:8px;">
-                            <li>ดูแลระบบเว็บไซต์กรมฯ (www.dcce.go.th)</li>
-                            <li>พัฒนาระบบศูนย์ CCECENTER และเรื่องร้องเรียน</li>
-                            <li>พัฒนาระบบ Line Chat-bot</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <h4 style="margin:0; font-size:1rem;">เจ้าหน้าที่ระบบงานคอมพิวเตอร์</h4>
-                        <div style="color: var(--secondary); font-size:0.85rem; font-weight:600; margin:4px 0;">
-                            กรมส่งเสริมคุณภาพสิ่งแวดล้อม</div>
-                        <div style="font-size:0.8rem; color:#94a3b8;"><i class="far fa-calendar-alt"></i> 2565 – 2566
+
+            <div class="exp-card-premium">
+                <div class="slider-container-premium">
+                    <button class="slider-btn-premium prev" onclick="moveSlide('slide-dcce', -1)"><i
+                            class="fas fa-chevron-left"></i></button>
+                    <button class="slider-btn-premium next" onclick="moveSlide('slide-dcce', 1)"><i
+                            class="fas fa-chevron-right"></i></button>
+
+                    <div class="slider-wrapper-premium" id="slide-dcce">
+                        <div class="slide-premium">
+                            <img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/249232-1024x683.jpg"
+                                alt="DCCE Work 1">
+                        </div>
+                        <div class="slide-premium">
+                            <img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/1685334447765-scaled.jpg"
+                                alt="DCCE Work 2">
+                        </div>
+                        <div class="slide-premium">
+                            <img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/1703327924461.jpg"
+                                alt="DCCE Work 3">
                         </div>
                     </div>
-                    <div class="timeline-item" style="margin-bottom:0;">
-                        <div class="timeline-dot"></div>
-                        <h4 style="margin:0; font-size:1rem;">ครูผู้สอน / บุคลากรทางการศึกษา</h4>
-                        <div style="color: var(--secondary); font-size:0.85rem; font-weight:600; margin:4px 0;">
-                            วิทยาลัยเทคโนโลยีธาตุพนม</div>
-                        <div style="font-size:0.8rem; color:#94a3b8;"><i class="far fa-calendar-alt"></i> 2552 – 2565
-                            (13 ปี)</div>
+                </div>
+
+                <div class="exp-header-premium">
+                    <div class="exp-logo-premium">
+                        <img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/logo-ccecenter-1024x1024.png"
+                            alt="DCCE Logo">
+                    </div>
+                    <div>
+                        <h3 class="exp-company-premium">กรมการเปลี่ยนแปลงสภาพภูมิอากาศและสิ่งแวดล้อม</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                            <div class="exp-badge-premium active"><i class="fas fa-laptop-code"></i>
+                                เจ้าหน้าที่ระบบงานคอมพิวเตอร์</div>
+                            <div class="exp-badge-premium"><i class="far fa-calendar-alt"></i> 2565 – ปัจจุบัน</div>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    .task-grid-grouped {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                        gap: 15px;
+                    }
+
+                    .task-group-card {
+                        background: #f8fafc;
+                        border: 1px solid #e2e8f0;
+                        padding: 16px;
+                        border-radius: 16px;
+                        transition: all 0.3s ease;
+                    }
+
+                    .task-group-card:hover {
+                        background: #ffffff;
+                        border-color: var(--secondary);
+                        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.08);
+                        transform: translateY(-2px);
+                    }
+
+                    .task-group-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+                        margin-bottom: 15px;
+                        border-bottom: 1px dashed #cbd5e1;
+                        padding-bottom: 10px;
+                    }
+
+                    .task-group-title {
+                        margin: 0;
+                        font-size: 0.95rem;
+                        font-weight: 700;
+                        color: var(--primary);
+                    }
+
+                    .task-tags {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 8px;
+                    }
+
+                    .task-tag {
+                        background: #ffffff;
+                        border: 1px solid #cbd5e1;
+                        color: var(--text-main);
+                        font-size: 0.8rem;
+                        padding: 6px 12px;
+                        border-radius: 20px;
+                        font-weight: 500;
+                        text-decoration: none;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 5px;
+                        transition: 0.2s;
+                    }
+
+                    a.task-tag:hover {
+                        background: var(--secondary);
+                        color: #ffffff;
+                        border-color: var(--secondary);
+                        transform: scale(1.05);
+                    }
+
+                    .tag-badge {
+                        background: #ef4444;
+                        color: white;
+                        font-size: 0.55rem;
+                        padding: 2px 5px;
+                        border-radius: 4px;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                    }
+                </style>
+                <div class="exp-body-premium">
+                    <div class="task-title"><i class="fas fa-tasks" style="color: var(--secondary);"></i>
+                        ภาระงานที่รับผิดชอบ</div>
+
+                    <div class="task-grid-grouped">
+
+                        <div class="task-group-card">
+                            <div class="task-group-header">
+                                <div class="task-icon" style="color: #3b82f6; background: rgba(59, 130, 246, 0.1);"><i
+                                        class="fas fa-code"></i></div>
+                                <h4 class="task-group-title">ออกแบบ & พัฒนาระบบ</h4>
+                            </div>
+                            <div class="task-tags">
+                                <a href="https://ccic.dcce.go.th" target="_blank" class="task-tag"><i
+                                        class="fas fa-link" style="font-size:0.6rem;"></i> ศูนย์ CCECENTER</a>
+                                <a href="https://petition.dcce.go.th" target="_blank" class="task-tag"><i
+                                        class="fas fa-link" style="font-size:0.6rem;"></i> ระบบร้องทุกข์</a>
+                                <a href="https://complain.dcce.go.th" target="_blank" class="task-tag"><i
+                                        class="fas fa-link" style="font-size:0.6rem;"></i> ร้องเรียนทุจริต <span
+                                        class="tag-badge">New</span></a>
+                                <span class="task-tag">ระบบมอบหมาย & ติดตามงาน</span>
+                                <span class="task-tag">ระบบค้นหารหัสเข้าใช้งาน</span>
+                            </div>
+                        </div>
+
+                        <div class="task-group-card">
+                            <div class="task-group-header">
+                                <div class="task-icon" style="color: #10b981; background: rgba(16, 185, 129, 0.1);"><i
+                                        class="fas fa-server"></i></div>
+                                <h4 class="task-group-title">ดูแลระบบสารสนเทศ</h4>
+                            </div>
+                            <div class="task-tags">
+                                <a href="http://dcce.go.th" target="_blank" class="task-tag"><i class="fas fa-link"
+                                        style="font-size:0.6rem;"></i> เว็บไซต์กรมฯ (dcce.go.th)</a>
+                                <span class="task-tag"><i class="fas fa-tree" style="color:#10b981;"></i> ระบบ Green
+                                    Area</span>
+                                <span class="task-tag"><i class="fas fa-book" style="color:#8b5cf6;"></i> ห้องสมุด
+                                    (Greenlibrary)</span>
+                            </div>
+                        </div>
+
+                        <div class="task-group-card">
+                            <div class="task-group-header">
+                                <div class="task-icon" style="color: #f59e0b; background: rgba(245, 158, 11, 0.1);"><i
+                                        class="fas fa-layer-group"></i></div>
+                                <h4 class="task-group-title">สื่อกราฟิก & บริหารงาน</h4>
+                            </div>
+                            <div class="task-tags">
+                                <span class="task-tag"><i class="fas fa-paint-brush" style="color:#ec4899;"></i>
+                                    ออกแบบสื่อกราฟิก</span>
+                                <span class="task-tag"><i class="fas fa-desktop" style="color:#f97316;"></i> Banner &
+                                    Landing Page</span>
+                                <span class="task-tag"><i class="fas fa-file-signature" style="color:#475569;"></i>
+                                    กรรมการจัดซื้อจัดจ้างภาครัฐ</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="exp-card-premium">
+                <div class="slider-container-premium">
+                    <button class="slider-btn-premium prev" onclick="moveSlide('slide-tech', -1)"><i
+                            class="fas fa-chevron-left"></i></button>
+                    <button class="slider-btn-premium next" onclick="moveSlide('slide-tech', 1)"><i
+                            class="fas fa-chevron-right"></i></button>
+
+                    <div class="slider-wrapper-premium" id="slide-tech">
+                        <div class="slide-premium">
+                            <img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/249658-1024x768.jpg"
+                                alt="Tech Work 1">
+                        </div>
+                        <div class="slide-premium">
+                            <img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/1660817095081.jpg"
+                                alt="Tech Work 2">
+                        </div>
+                        <div class="slide-premium">
+                            <img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/249653-scaled.jpg"
+                                alt="Tech Work 3">
+                        </div>
+                        <div class="slide-premium">
+                            <img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/249650-scaled.jpg"
+                                alt="Tech Work 4">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exp-header-premium">
+                    <div class="exp-logo-premium" style="border-color: #f59e0b;">
+                        <img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/logo-tech.png"
+                            alt="Tech College Logo">
+                    </div>
+                    <div>
+                        <h3 class="exp-company-premium">วิทยาลัยเทคโนโลยีธาตุพนม</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                            <div class="exp-badge-premium" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">
+                                <i class="fas fa-chalkboard-teacher"></i> ครูผู้สอน / บุคลากร
+                            </div>
+                            <div class="exp-badge-premium"><i class="far fa-calendar-alt"></i> 2552 – 2565 (13 ปี)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="exp-body-premium">
+                    <div class="task-title"><i class="fas fa-tasks" style="color: var(--secondary);"></i>
+                        ภาระงานที่รับผิดชอบ</div>
+
+                    <div class="task-grid-grouped">
+
+                        <div class="task-group-card">
+                            <div class="task-group-header">
+                                <div class="task-icon" style="color: #f59e0b; background: rgba(245, 158, 11, 0.1);"><i
+                                        class="fas fa-chalkboard-teacher"></i></div>
+                                <h4 class="task-group-title">การสอน & วิชาการ</h4>
+                            </div>
+                            <div class="task-tags">
+                                <span class="task-tag">สอนระดับ ปวช. – ปวส. (คอมพิวเตอร์)</span>
+                                <span class="task-tag">โครงการบริการวิชาชีพ</span>
+                                <span class="task-tag">งานประกันคุณภาพ (ภายใน-ภายนอก)</span>
+                            </div>
+                        </div>
+
+                        <div class="task-group-card">
+                            <div class="task-group-header">
+                                <div class="task-icon" style="color: #3b82f6; background: rgba(59, 130, 246, 0.1);"><i
+                                        class="fas fa-network-wired"></i></div>
+                                <h4 class="task-group-title">ระบบ IT & สื่อ</h4>
+                            </div>
+                            <div class="task-tags">
+                                <span class="task-tag">ติดตั้ง & ดูแล Network</span>
+                                <span class="task-tag">ซ่อมบำรุงคอมพิวเตอร์</span>
+                                <span class="task-tag">ออกแบบภาพกราฟิก</span>
+                                <span class="task-tag">ออกแบบสื่อมัลติมีเดีย & เว็บไซต์</span>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
 
-            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> ประวัติการศึกษา</h2>
-            <div class="card">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background:var(--accent); border-color:#ecfdf5;"></div>
-                        <h4 style="margin:0; font-size:1rem;">ประกาศนียบัตรบัณฑิตวิชาชีพครู</h4>
-                        <div style="color: var(--text-muted); font-size:0.85rem; margin:2px 0;">มหาวิทยาลัยราชภัฏสกลนคร
-                            (2556)</div>
-                    </div>
-                    <div class="timeline-item" style="margin-bottom:0;">
-                        <div class="timeline-dot" style="background:var(--accent); border-color:#ecfdf5;"></div>
-                        <h4 style="margin:0; font-size:1rem;">ป.ตรี บธ.บ. คอมพิวเตอร์ธุรกิจ</h4>
-                        <div style="color: var(--text-muted); font-size:0.85rem; margin:2px 0;">มหาวิทยาลัยราชภัฏสกลนคร
-                            (2554)</div>
-                    </div>
-                </div>
-            </div>
+            <script>
+                function moveSlide(sliderId, direction) {
+                    const slider = document.getElementById(sliderId);
+                    const scrollAmount = slider.clientWidth; // เลื่อนทีละ 1 รูปเต็มๆ
+                    slider.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+                }
+            </script>
         </section>
 
-
+        <!--section portfolio-->
         <section id="portfolio">
             <h2 class="section-title"><i class="fas fa-laptop-code"></i> ระบบและแอปพลิเคชันที่พัฒนา</h2>
             <div class="grid-2">
