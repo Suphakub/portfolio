@@ -589,6 +589,95 @@
             font-weight: 500;
         }
 
+        .skill-category {
+            margin-bottom: 20px;
+        }
+
+        .skill-category-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px dashed #cbd5e1;
+            padding-bottom: 5px;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+            gap: 12px;
+        }
+
+        .skill-box {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            border-radius: 14px;
+            padding: 10px 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+
+        .skill-box:active {
+            transform: scale(0.95);
+        }
+
+        .skill-box img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+            margin-bottom: 6px;
+        }
+
+        .skill-box span {
+            font-size: 0.65rem;
+            color: var(--text-main);
+            font-weight: 500;
+            line-height: 1.1;
+        }
+
+        .ability-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .ability-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            background: #ffffff;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .ability-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .ability-text {
+            font-size: 0.85rem;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
         /* กรณีหน้าจอเล็กมาก ให้โลโก้กับข้อความเรียงบนล่าง */
         @media (max-width: 380px) {
             .edu-card-content {
@@ -772,12 +861,8 @@
                                     style="background: rgba(16, 185, 129, 0.1); color: var(--accent); font-size: 0.65rem; padding: 4px 8px; border-radius: 12px; font-weight: 600; letter-spacing: 0.5px;">NEW</span>
                             </div>
                             <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">
-<<<<<<< HEAD
                                 ออกแบบและพัฒนาเว็บไซต์สำหรับศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ
                                 (https://ccic.dcce.go.th)</p>
-=======
-                                ออกแบบและพัฒนาเว็บไซต์สำหรับศูนย์ข้อมูลการเปลี่ยนแปลงสภาพภูมิอากาศ (https://ccic.dcce.go.th)</p>
->>>>>>> 570c3199e7c1632964c0c838959521b29bccb34e
                         </div>
                     </div>
                 </div>
@@ -1007,8 +1092,7 @@
                         <div class="edu-dot"></div>
                         <div class="edu-card-content">
                             <div class="edu-logo-100">
-                                <img src="./dies/images/snru-logo-n.png"
-                                    alt="SNRU Logo">
+                                <img src="./dies/images/snru-logo-n.png" alt="SNRU Logo">
                             </div>
                             <div class="edu-text-group">
                                 <h4 class="edu-title-text">ปริญญาตรี</h4>
@@ -1027,8 +1111,7 @@
                             style="background: #f59e0b; box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);"></div>
                         <div class="edu-card-content">
                             <div class="edu-logo-100">
-                                <img src="./dies/images/logo-tech.png"
-                                    alt="School Logo">
+                                <img src="./dies/images/logo-tech.png" alt="School Logo">
                             </div>
                             <div class="edu-text-group">
                                 <h4 class="edu-title-text">ประกาศนียบัตรวิชาชีพชั้นสูง</h4>
@@ -1047,8 +1130,7 @@
                             style="background: #f59e0b; box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);"></div>
                         <div class="edu-card-content">
                             <div class="edu-logo-100">
-                                <img src="./dies/images/logo-tech.png"
-                                    alt="School Logo">
+                                <img src="./dies/images/logo-tech.png" alt="School Logo">
                             </div>
                             <div class="edu-text-group">
                                 <h4 class="edu-title-text">ประกาศนียบัตรวิชาชีพ</h4>
@@ -1067,8 +1149,7 @@
                             style="background: #8b5cf6; box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);"></div>
                         <div class="edu-card-content">
                             <div class="edu-logo-100">
-                                <img src="./dies/images/1048190489.jpg"
-                                    alt="School Logo">
+                                <img src="./dies/images/1048190489.jpg" alt="School Logo">
                             </div>
                             <div class="edu-text-group">
                                 <h4 class="edu-title-text">มัธยมศึกษาตอนต้น</h4>
@@ -1086,8 +1167,7 @@
                             style="background: #ec4899; box-shadow: 0 0 0 2px rgba(236, 72, 153, 0.2);"></div>
                         <div class="edu-card-content">
                             <div class="edu-logo-100">
-                                <img src="./dies/images/unnamed.png"
-                                    alt="School Logo">
+                                <img src="./dies/images/unnamed.png" alt="School Logo">
                             </div>
                             <div class="edu-text-group">
                                 <h4 class="edu-title-text">ประถมศึกษา</h4>
@@ -1106,23 +1186,251 @@
 
         <!--section skills-->
         <section id="skills">
-            <h2 class="section-title"><i class="fas fa-bolt"></i> ความเชี่ยวชาญ</h2>
-            <div class="card">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot" style="background:var(--accent); border-color:#ecfdf5;"></div>
-                        <h4 style="margin:0; font-size:1rem;">ประกาศนียบัตรบัณฑิตวิชาชีพครู</h4>
-                        <div style="color: var(--text-muted); font-size:0.85rem; margin:2px 0;">มหาวิทยาลัยราชภัฏสกลนคร
-                            (2556)</div>
+            <h2 class="section-title"><i class="fas fa-tools"></i> ทักษะและความสามารถ</h2>
+            <div class="card" style="padding: 20px;">
+                <h3 style="margin: 0 0 15px; font-size: 1.1rem; color: var(--primary); text-align: center;">
+                    <i class="fas fa-desktop" style="color: var(--accent);"></i> ทักษะทางด้านคอมพิวเตอร์
+                </h3>
+                <div class="skill-category">
+                    <div class="skill-category-title"><i class="fas fa-file-alt"></i> Office & Data</div>
+                    <div class="skill-grid">
+                        <div class="skill-box">
+                            <img src="https://static.vecteezy.com/system/resources/previews/017/396/802/large_2x/microsoft-word-mobile-apps-icon-free-png.png"
+                                alt="ที่มาภาพ: vecteezy.com">
+                            <span>Word</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://png.pngtree.com/element_our/md/20180627/md_5b33460f04516.jpg"
+                                alt="ที่มาภาพ: pngtree.com">
+                            <span>Excel</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://th.bing.com/th/id/OIP.q6ZUGlplXlItCCEyQR95HAHaHa?w=164&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                                alt="ที่มาภาพ: bing.com">
+                            <span>PowerPoint</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://www.wizcase.com/wp-content/uploads/2020/10/Microsoft-Access-Logo.png"
+                                alt="ที่มาภาพ: wizcase.com">
+                            <span>Access</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+                                alt="ที่มาภาพ: wikipedia.org">
+                            <span>Power BI</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.2ua5j58Lp-_F7Uo7iR60cgHaF_?pid=ImgDet&w=474&h=383&rs=1&o=7&rm=3"
+                                alt="ที่มาภาพ: bing.com">
+                            <span>Arc GIS</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://datawarehouse.io/wp-content/uploads/2021/02/looker-1.png"
+                                alt="ที่มาภาพ: datawarehouse.io">
+                            <span>Looker</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://tableau-excel.com/wp-content/uploads/sites/23/2024/07/Microsoft-Power-Query.png"
+                                alt="ที่มาภาพ: tableau-excel.com">
+                            <span>Power Query</span>
+                        </div>
                     </div>
-                    <div class="timeline-item" style="margin-bottom:0;">
-                        <div class="timeline-dot" style="background:var(--accent); border-color:#ecfdf5;"></div>
-                        <h4 style="margin:0; font-size:1rem;">ป.ตรี บธ.บ. คอมพิวเตอร์ธุรกิจ</h4>
-                        <div style="color: var(--text-muted); font-size:0.85rem; margin:2px 0;">มหาวิทยาลัยราชภัฏสกลนคร
-                            (2554)</div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title"><i class="fas fa-code"></i> Web & Database</div>
+                    <div class="skill-grid">
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                                alt="ที่มาภาพ: devicon">
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+                                alt="ที่มาภาพ: devicon">
+                            <span>CSS3</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                                alt="ที่มาภาพ: devicon">
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+                                alt="ที่มาภาพ: devicon">
+                            <span>PHP</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+                                alt="ที่มาภาพ: devicon">
+                            <span>MySQL</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"
+                                alt="ที่มาภาพ: devicon">
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg"
+                                alt="ที่มาภาพ: devicon">
+                            <span>WordPress</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://lh6.googleusercontent.com/proxy/iZr8oev7GBD1ZjchpdJNafQZv79WAn3tJTiEniP4Jc7FCDg_lLfMzh-iSId6nOY6qio321hz9Nx6fx5ac_DovlCIKJfdXUIoJn3pRiKms4hy08gx9k1VTg=s0-d"
+                                alt="ที่มาภาพ: devicon">
+                            <span>Joomla!</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                                alt="ที่มาภาพ: devicon">
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-original.svg"
+                                alt="ที่มาภาพ: devicon">
+                            <span>Visual Studio</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                                alt="ที่มาภาพ: devicon">
+                            <span>GitHub</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category" style="margin-bottom: 0;">
+                    <div class="skill-category-title"><i class="fas fa-palette"></i> Design & Utilities</div>
+                    <div class="skill-grid">
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg"
+                                alt="Photoshop">
+                            <span>Photoshop</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/premierepro/premierepro-original.svg"
+                                alt="Premiere">
+                            <span>Premiere Pro</span>
+                        </div>
+                        <div class="skill-box">
+                            <div
+                                style="width: 35px; height: 35px; background:#000; color:#ff8a00; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:1.2rem; margin-bottom:6px;">
+                                An</div>
+                            <span>Animate</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.6fbYhqKxzmOkrQhigbEMzAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3"
+                                alt="ที่มาภาพ: bing" style="object-fit: contain; width: 40px;">
+                            <span>Sony Vagas</span>
+                        </div>
+                        <div class="skill-box">
+                            <img src="https://tse2.mm.bing.net/th/id/OIP.uoV3-SfICm63yah3-0v7NQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+                                alt="ที่มาภาพ: bing" style="object-fit: contain; width: 40px;">
+                            <span>MikroTik</span>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="card" style="padding: 20px;">
+                <h3 style="margin: 0 0 15px; font-size: 1.1rem; color: var(--primary); text-align: center;">
+                    <i class="fas fa-cloud" style="color: var(--secondary);"></i> ทักษะโปรแกรมออนไลน์ & AI
+                </h3>
+                <div class="skill-grid">
+                    <div class="skill-box">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg"
+                            alt="Canva">
+                        <span>Canva</span>
+                    </div>
+                    <div class="skill-box">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Google_Workspace_Logo.svg"
+                            alt="Google Workspace">
+                        <span>Workspace</span>
+                    </div>
+                    <div class="skill-box">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg"
+                            alt="Gemini">
+                        <span>Gemini</span>
+                    </div>
+                    <div class="skill-box">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT">
+                        <span>ChatGPT</span>
+                    </div>
+                    <div class="skill-box">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg"
+                            alt="Firebase">
+                        <span>Firebase</span>
+                    </div>
+                    <div class="skill-box">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE Chatbot">
+                        <span>LINE Bot AI</span>
+                    </div>
+                    <div class="skill-box">
+                        <img src="https://th.bing.com/th/id/OIP.TcvPr6VG0lGyx00cS5-_AgHaEK?w=290&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                            alt="NotebookLM" style="object-fit: contain; width: 40px;">
+                        <span>NotebookLM</span>
+                    </div>
+                    <div class="skill-box">
+                        <i class="fas fa-mobile-alt"
+                            style="font-size: 1.8rem; color: #10b981; margin-bottom: 8px; margin-top: 5px;"></i>
+                        <span>AppSheet</span>
+                    </div>
+                    <div class="skill-box">
+                        <i class="fas fa-robot"
+                            style="font-size: 1.8rem; color: #8b5cf6; margin-bottom: 8px; margin-top: 5px;"></i>
+                        <span>App Inventor</span>
+                    </div>
+                    <div class="skill-box">
+                        <i class="fas fa-video"
+                            style="font-size: 1.8rem; color: #3b82f6; margin-bottom: 8px; margin-top: 5px;"></i>
+                        <span>invideo AI</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="padding: 20px;">
+                <h3 style="margin: 0 0 15px; font-size: 1.1rem; color: var(--primary); text-align: center;">
+                    <i class="fas fa-star" style="color: #f59e0b;"></i> ความสามารถพิเศษ
+                </h3>
+                <ul class="ability-list">
+                    <li class="ability-item">
+                        <div class="ability-icon" style="background: rgba(59, 130, 246, 0.1); color: var(--secondary);">
+                            <i class="fas fa-hdd"></i>
+                        </div>
+                        <div class="ability-text">ติดตั้งระบบปฏิบัติการ OS (Ghost / Boot CD)</div>
+                    </li>
+                    <li class="ability-item">
+                        <div class="ability-icon" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="ability-text">ซ่อมและตรวจสอบแก้ไขอาการเสียของเครื่องคอมพิวเตอร์</div>
+                    </li>
+                    <li class="ability-item">
+                        <div class="ability-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--accent);">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="ability-text">ออกแบบและติดตั้งระบบเครือข่าย Network</div>
+                    </li>
+                    <li class="ability-item">
+                        <div class="ability-icon" style="background: rgba(139, 92, 246, 0.1); color: #8b5cf6;">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="ability-text">ออกแบบและพัฒนาเว็บไซต์ (Web Application)</div>
+                    </li>
+                    <li class="ability-item">
+                        <div class="ability-icon" style="background: rgba(236, 72, 153, 0.1); color: #ec4899;">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="ability-text">เป็นวิทยากรอบรมให้ความรู้ด้านคอมพิวเตอร์</div>
+                    </li>
+                    <li class="ability-item">
+                        <div class="ability-icon" style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9;">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="ability-text">ออกแบบสื่อกราฟิก (Graphic Design)</div>
+                    </li>
+                </ul>
+            </div>
+
         </section>
 
         <!--section experience-->
