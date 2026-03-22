@@ -885,6 +885,80 @@
             line-height: 1.4;
         }
 
+        .task-grid-grouped {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .task-group-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 16px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .task-group-card:hover {
+            background: #ffffff;
+            border-color: var(--secondary);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .task-group-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #cbd5e1;
+            padding-bottom: 10px;
+        }
+
+        .task-group-title {
+            margin: 0;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .task-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .task-tag {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            color: var(--text-main);
+            font-size: 0.8rem;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: 0.2s;
+        }
+
+        a.task-tag:hover {
+            background: var(--secondary);
+            color: #ffffff;
+            border-color: var(--secondary);
+            transform: scale(1.05);
+        }
+
+        .tag-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.55rem;
+            padding: 2px 5px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
 
 
         /* กรณีหน้าจอเล็กมาก ให้โลโก้กับข้อความเรียงบนล่าง */
@@ -1683,82 +1757,6 @@
                         </div>
                     </div>
                 </div>
-                <style>
-                    .task-grid-grouped {
-                        display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                        gap: 15px;
-                    }
-
-                    .task-group-card {
-                        background: #f8fafc;
-                        border: 1px solid #e2e8f0;
-                        padding: 16px;
-                        border-radius: 16px;
-                        transition: all 0.3s ease;
-                    }
-
-                    .task-group-card:hover {
-                        background: #ffffff;
-                        border-color: var(--secondary);
-                        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.08);
-                        transform: translateY(-2px);
-                    }
-
-                    .task-group-header {
-                        display: flex;
-                        align-items: center;
-                        gap: 12px;
-                        margin-bottom: 15px;
-                        border-bottom: 1px dashed #cbd5e1;
-                        padding-bottom: 10px;
-                    }
-
-                    .task-group-title {
-                        margin: 0;
-                        font-size: 0.95rem;
-                        font-weight: 700;
-                        color: var(--primary);
-                    }
-
-                    .task-tags {
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 8px;
-                    }
-
-                    .task-tag {
-                        background: #ffffff;
-                        border: 1px solid #cbd5e1;
-                        color: var(--text-main);
-                        font-size: 0.8rem;
-                        padding: 6px 12px;
-                        border-radius: 20px;
-                        font-weight: 500;
-                        text-decoration: none;
-                        display: inline-flex;
-                        align-items: center;
-                        gap: 5px;
-                        transition: 0.2s;
-                    }
-
-                    a.task-tag:hover {
-                        background: var(--secondary);
-                        color: #ffffff;
-                        border-color: var(--secondary);
-                        transform: scale(1.05);
-                    }
-
-                    .tag-badge {
-                        background: #ef4444;
-                        color: white;
-                        font-size: 0.55rem;
-                        padding: 2px 5px;
-                        border-radius: 4px;
-                        text-transform: uppercase;
-                        font-weight: bold;
-                    }
-                </style>
                 <div class="exp-body-premium">
                     <div class="task-title"><i class="fas fa-tasks" style="color: var(--secondary);"></i>
                         ภาระงานที่รับผิดชอบ</div>
@@ -1773,7 +1771,7 @@
                             </div>
                             <div class="task-tags">
                                 <a href="https://ccic.dcce.go.th" target="_blank" class="task-tag"><i
-                                        class="fas fa-link" style="font-size:0.6rem;"></i> ศูนย์ CCECENTER</a>
+                                        class="fas fa-link" style="font-size:0.6rem;"></i> ศูนย์ฯ CCIC</a>
                                 <a href="https://petition.dcce.go.th" target="_blank" class="task-tag"><i
                                         class="fas fa-link" style="font-size:0.6rem;"></i> ระบบร้องทุกข์</a>
                                 <a href="https://complain.dcce.go.th" target="_blank" class="task-tag"><i
@@ -1791,10 +1789,10 @@
                                 <h4 class="task-group-title">ดูแลระบบสารสนเทศ</h4>
                             </div>
                             <div class="task-tags">
-                                <a href="http://dcce.go.th" target="_blank" class="task-tag"><i class="fas fa-link"
+                                <a href="https://dcce.go.th" target="_blank" class="task-tag"><i class="fas fa-link"
                                         style="font-size:0.6rem;"></i> เว็บไซต์กรมฯ (dcce.go.th)</a>
-                                <span class="task-tag"><i class="fas fa-tree" style="color:#10b981;"></i> ระบบ Green
-                                    Area</span>
+                                <a href="https://greenplatform.dcce.go.th" target="_blank" class="task-tag"><i class="fas fa-link"
+                                        style="font-size:0.6rem;"></i> Green Digital Platform</a>
                                 <span class="task-tag"><i class="fas fa-book" style="color:#8b5cf6;"></i> ห้องสมุด
                                     (Greenlibrary)</span>
                             </div>
@@ -1958,47 +1956,300 @@
         </section>
 
         <!--section activities-->
-        <section id="activities">
-            <h2 class="section-title"><i class="fas fa-chalkboard-teacher"></i> หลักสูตรการอบรม</h2>
-            <div class="card" style="padding: 15px;">
-                <div
-                    style="display: flex; gap: 15px; margin-bottom: 15px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px;">
-                    <img src="https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-                        style="width: 80px; height: 60px; border-radius: 8px; object-fit: cover;">
-                    <div>
-                        <h4 style="margin:0 0 5px; font-size:0.9rem;">การอบรมด้าน Security & UX/UI</h4>
-                        <p style="margin:0; font-size:0.8rem; color:var(--text-muted);">
-                            เสริมสร้างทักษะการออกแบบและรักษาความปลอดภัยระบบ</p>
+<section id="activities">
+            <style>
+                /* --- General & Buttons --- */
+                #activities .section-title { margin-top: 35px; margin-bottom: 15px; }
+                .btn-view-all {
+                    display: flex; align-items: center; justify-content: center; gap: 8px;
+                    width: 100%; padding: 12px; margin-top: 15px; margin-bottom: 20px;
+                    background: rgba(59, 130, 246, 0.08); color: var(--secondary);
+                    border: 1px dashed var(--secondary); border-radius: 14px;
+                    font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
+                }
+                .btn-view-all:active { transform: scale(0.98); background: var(--secondary); color: white; }
+
+                /* --- 1. Training Course (แก้ปัญหาภาพไม่เต็ม) --- */
+                .training-grid-modern {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 15px;
+                }
+                .training-card-modern {
+                    background: #ffffff; border-radius: 16px; overflow: hidden;
+                    box-shadow: 0 8px 20px rgba(0,0,0,0.05); border: 1px solid #f1f5f9;
+                }
+                .training-img-wrap {
+                    width: 100%; aspect-ratio: 1.414; /* สัดส่วน A4 แนวนอน */
+                    background: #e2e8f0; padding: 15px; box-sizing: border-box; position: relative;
+                }
+                .training-img-wrap img {
+                    width: 100%; height: 100%;
+                    object-fit: contain; /* แก้ปัญหาภาพโดนตัด */
+                    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* สร้างเงาให้ดูเป็นแผ่นกระดาษ */
+                    background: white;
+                }
+                .training-badge {
+                    position: absolute; top: 10px; right: 10px;
+                    background: var(--accent); color: white; font-size: 0.65rem;
+                    padding: 4px 10px; border-radius: 20px; font-weight: 600; z-index: 2;
+                }
+                .training-info { padding: 15px; border-top: 3px solid var(--secondary); }
+                .training-title { font-size: 0.95rem; font-weight: 700; color: var(--primary); margin: 0 0 5px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+                .training-org { font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; font-weight: 500; }
+
+                /* --- 2. Performance (Bento Grid) --- */
+                .perf-grid-modern { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+                .perf-card-modern {
+                    position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 1;
+                    box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+                }
+                .perf-card-modern img { width: 100%; height: 100%; object-fit: cover; }
+                .perf-overlay {
+                    position: absolute; bottom: 0; left: 0; width: 100%;
+                    background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent);
+                    color: white; padding: 30px 12px 12px; display: flex; flex-direction: column; justify-content: flex-end;
+                }
+                .perf-title { font-size: 0.85rem; font-weight: 700; margin: 0 0 4px; line-height: 1.3; }
+                .perf-tag { font-size: 0.65rem; color: #bae6fd; font-weight: 600; background: rgba(186, 230, 253, 0.15); padding: 3px 6px; border-radius: 6px; width: max-content; }
+
+                /* --- 3. Activities (มีคำอธิบาย + ปี พ.ศ.) --- */
+                .act-grid-modern { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+                .act-card-modern {
+                    position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 4/5; /* ทำให้กล่องสูงขึ้นเพื่อใส่ข้อความ */
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.08); cursor: zoom-in;
+                }
+                .act-card-modern img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+                .act-card-modern:active img { transform: scale(1.05); }
+                .act-year-badge {
+                    position: absolute; top: 10px; right: 10px;
+                    background: #ec4899; color: white; font-size: 0.65rem; font-weight: bold;
+                    padding: 4px 8px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                }
+                .act-overlay-text {
+                    position: absolute; bottom: 0; left: 0; width: 100%;
+                    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, transparent 100%);
+                    color: white; padding: 25px 12px 12px;
+                }
+                .act-title { font-size: 0.85rem; font-weight: 700; margin: 0 0 4px; line-height: 1.3; text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
+                .act-desc { font-size: 0.7rem; color: #cbd5e1; margin: 0; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+                /* --- Full Screen Modal (หน้าสำหรับ "ดูทั้งหมด") --- */
+                .full-modal {
+                    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                    background: var(--bg-body); z-index: 2000; overflow-y: auto;
+                    transform: translateY(100%); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                    padding-bottom: 50px;
+                }
+                .full-modal.active { transform: translateY(0); }
+                .modal-header {
+                    position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);
+                    padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;
+                    z-index: 10; border-bottom: 1px solid #e2e8f0; box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+                }
+                .modal-close-btn {
+                    background: #f1f5f9; border: none; width: 35px; height: 35px; border-radius: 50%;
+                    color: #64748b; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
+                }
+
+                /* --- Lightbox Popup --- */
+                .lightbox-overlay {
+                    display: none; position: fixed; z-index: 3000; top: 0; left: 0; width: 100%; height: 100%;
+                    background-color: rgba(0, 0, 0, 0.95); align-items: center; justify-content: center; flex-direction: column; backdrop-filter: blur(5px);
+                }
+                .lightbox-overlay.active { display: flex; animation: fadeIn 0.2s ease; }
+                .lightbox-content { max-width: 95%; max-height: 70vh; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); object-fit: contain; }
+                .lightbox-close { position: absolute; top: 20px; right: 20px; color: white; font-size: 2.5rem; cursor: pointer; background: none; border: none; }
+                .lightbox-text-container { margin-top: 20px; text-align: center; color: white; padding: 0 20px; max-width: 500px; }
+                .lightbox-title { font-size: 1.1rem; font-weight: 700; margin: 0 0 5px; color: var(--accent); }
+                .lightbox-desc { font-size: 0.9rem; color: #cbd5e1; margin: 0; line-height: 1.5; }
+                @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+            </style>
+
+            <h2 class="section-title"><i class="fas fa-certificate" style="color: #f59e0b;"></i> หลักสูตรการอบรม <br><span style="font-size: 0.75rem; color: var(--text-muted); font-weight: normal;">(TRAINING COURSE - 4 รายการล่าสุด)</span></h2>
+            
+            <div class="training-grid-modern">
+
+                <div class="training-card-modern">
+                    <div class="training-img-wrap">
+                        <span class="training-badge">Certificate</span>
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Cert 3">
+                    </div>
+                    <div class="training-info">
+                        <h4 class="training-title">การพัฒนาระบบเครือข่าย Network</h4>
+                        <div class="training-org"><i class="fas fa-building" style="color: var(--secondary);"></i> สถาบันพัฒนาบุคลากรด้านดิจิทัล</div>
                     </div>
                 </div>
-                <div style="display: flex; gap: 15px;">
-                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
-                        style="width: 80px; height: 60px; border-radius: 8px; object-fit: cover;">
-                    <div>
-                        <h4 style="margin:0 0 5px; font-size:0.9rem;">งานประกันคุณภาพการศึกษา (QA)</h4>
-                        <p style="margin:0; font-size:0.8rem; color:var(--text-muted);">วิทยาลัยเทคโนโลยีธาตุพนม</p>
+                <div class="training-card-modern">
+                    <div class="training-img-wrap">
+                        <span class="training-badge">Certificate</span>
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Cert 4">
                     </div>
+                    <div class="training-info">
+                        <h4 class="training-title">งานประกันคุณภาพการศึกษา (QA)</h4>
+                        <div class="training-org"><i class="fas fa-building" style="color: var(--secondary);"></i> วิทยาลัยเทคโนโลยีธาตุพนม</div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-view-all" onclick="openFullModal('modal-training')"><i class="fas fa-list"></i> ดูหลักสูตรทั้งหมด</button>
+
+
+            <h2 class="section-title"><i class="fas fa-laptop-code" style="color: var(--secondary);"></i> ผลงานวิชาชีพ <br><span style="font-size: 0.75rem; color: var(--text-muted); font-weight: normal;">(PERFORMANCE - 4 รายการล่าสุด)</span></h2>
+            
+            <div class="perf-grid-modern">
+                <div class="perf-card-modern">
+                    <img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/1685334447765-scaled.jpg" alt="Performance 1">
+                    <div class="perf-overlay">
+                        <h4 class="perf-title">ติดตั้งดูแล Network</h4>
+                        <span class="perf-tag">System & Network</span>
+                    </div>
+                </div>
+                <div class="perf-card-modern">
+                    <img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/IMG_20211227_111535-1024x576.jpg" alt="Performance 2">
+                    <div class="perf-overlay">
+                        <h4 class="perf-title">ซ่อมบำรุงคอมพิวเตอร์</h4>
+                        <span class="perf-tag">IT Support</span>
+                    </div>
+                </div>
+                <div class="perf-card-modern">
+                    <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Performance 3">
+                    <div class="perf-overlay">
+                        <h4 class="perf-title">วิทยากรบริการวิชาชีพ</h4>
+                        <span class="perf-tag">Teaching</span>
+                    </div>
+                </div>
+                <div class="perf-card-modern">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Performance 4">
+                    <div class="perf-overlay">
+                        <h4 class="perf-title">ออกแบบมัลติมีเดีย</h4>
+                        <span class="perf-tag">Graphic Design</span>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-view-all" onclick="openFullModal('modal-performance')"><i class="fas fa-th-large"></i> ดูผลงานวิชาชีพทั้งหมด</button>
+
+
+            <h2 class="section-title"><i class="fas fa-camera-retro" style="color: #ec4899;"></i> เข้าร่วมกิจกรรม <br><span style="font-size: 0.75rem; color: var(--text-muted); font-weight: normal;">(ACTIVITIES - 4 รายการล่าสุด)</span></h2>
+            
+            <div class="act-grid-modern">
+                <div class="act-card-modern" onclick="openActivityLightbox('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', '2565', 'คณะกรรมการคุมสอบ V-NET', 'ปฏิบัติหน้าที่คุมสอบและดูแลความเรียบร้อยการทดสอบทางการศึกษาแห่งชาติ')">
+                    <span class="act-year-badge">2565</span>
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="กิจกรรม">
+                    <div class="act-overlay-text">
+                        <h4 class="act-title">คณะกรรมการคุมสอบ V-NET</h4>
+                        <p class="act-desc">ปฏิบัติหน้าที่คุมสอบและดูแลความเรียบร้อยการทดสอบทางการศึกษาแห่งชาติ</p>
+                    </div>
+                </div>
+
+                <div class="act-card-modern" onclick="openActivityLightbox('https://jesada.pichet-green.com/wp-content/uploads/2025/01/249658-1024x768.jpg', '2564', 'วิทยากรบรรยายพิเศษ', 'บรรยายให้ความรู้ด้านเทคโนโลยีและคอมพิวเตอร์พื้นฐานแก่นักศึกษาใหม่')">
+                    <span class="act-year-badge">2564</span>
+                    <img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/249658-1024x768.jpg" alt="กิจกรรม">
+                    <div class="act-overlay-text">
+                        <h4 class="act-title">วิทยากรบรรยายพิเศษ</h4>
+                        <p class="act-desc">บรรยายให้ความรู้ด้านเทคโนโลยีและคอมพิวเตอร์พื้นฐานแก่นักศึกษาใหม่</p>
+                    </div>
+                </div>
+
+                <div class="act-card-modern" onclick="openActivityLightbox('https://jesada.pichet-green.com/wp-content/uploads/2025/01/IMG_20211227_111535-1024x576.jpg', '2563', 'อบรมเชิงปฏิบัติการ', 'สอนการประกอบคอมพิวเตอร์และการติดตั้งระบบปฏิบัติการเบื้องต้น')">
+                    <span class="act-year-badge">2563</span>
+                    <img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/IMG_20211227_111535-1024x576.jpg" alt="กิจกรรม">
+                    <div class="act-overlay-text">
+                        <h4 class="act-title">อบรมเชิงปฏิบัติการ</h4>
+                        <p class="act-desc">สอนการประกอบคอมพิวเตอร์และการติดตั้งระบบปฏิบัติการเบื้องต้น</p>
+                    </div>
+                </div>
+
+                <div class="act-card-modern" onclick="openActivityLightbox('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', '2562', 'ศึกษาดูงานระบบ IT', 'เข้าร่วมศึกษาดูงานด้านการพัฒนาระบบเครือข่ายระดับองค์กร')">
+                    <span class="act-year-badge">2562</span>
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="กิจกรรม">
+                    <div class="act-overlay-text">
+                        <h4 class="act-title">ศึกษาดูงานระบบ IT</h4>
+                        <p class="act-desc">เข้าร่วมศึกษาดูงานด้านการพัฒนาระบบเครือข่ายระดับองค์กร</p>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-view-all" onclick="openFullModal('modal-activities')"><i class="fas fa-images"></i> ดูกิจกรรมทั้งหมด</button>
+
+
+            <div id="modal-training" class="full-modal">
+                <div class="modal-header">
+                    <h3 style="margin:0; font-size: 1.1rem; color: var(--primary);"><i class="fas fa-certificate" style="color: #f59e0b;"></i> รายการหลักสูตรทั้งหมด</h3>
+                    <button class="modal-close-btn" onclick="closeFullModal('modal-training')"><i class="fas fa-times"></i></button>
+                </div>
+                <div style="padding: 20px;">
+                    <div class="training-grid-modern">
+                        <div class="training-card-modern"><div class="training-img-wrap"><img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/5d2d0b_e395561becc44f8f8f26b23b16954a7c.jpg"></div><div class="training-info"><h4 class="training-title">หลักสูตร จิตวิทยากับการจัดการเรียนรู้</h4></div></div>
+                        <div class="training-card-modern"><div class="training-img-wrap"><img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/snru-vnet.jpg"></div><div class="training-info"><h4 class="training-title">การบริหารจัดการ V-NET</h4></div></div>
+                        </div>
                 </div>
             </div>
 
-            <h2 class="section-title"><i class="fas fa-images"></i> ภาพกิจกรรม</h2>
-            <div class="grid-2">
-                <div class="media-card">
-                    <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                        class="media-img" style="height: 100px;">
-                    <div class="media-content" style="padding: 8px;">
-                        <h4 style="margin:0; font-size:0.8rem; text-align: center;">วิทยากรบริการวิชาชีพ</h4>
-                    </div>
+            <div id="modal-performance" class="full-modal">
+                <div class="modal-header">
+                    <h3 style="margin:0; font-size: 1.1rem; color: var(--primary);"><i class="fas fa-laptop-code" style="color: var(--secondary);"></i> ผลงานวิชาชีพทั้งหมด</h3>
+                    <button class="modal-close-btn" onclick="closeFullModal('modal-performance')"><i class="fas fa-times"></i></button>
                 </div>
-                <div class="media-card">
-                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                        class="media-img" style="height: 100px;">
-                    <div class="media-content" style="padding: 8px;">
-                        <h4 style="margin:0; font-size:0.8rem; text-align: center;">คณะกรรมการคุมสอบ v-net</h4>
-                    </div>
+                <div style="padding: 20px;">
+                    <div class="perf-grid-modern">
+                        <div class="perf-card-modern"><img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/1685334447765-scaled.jpg"><div class="perf-overlay"><h4 class="perf-title">ติดตั้งดูแล Network</h4></div></div>
+                        <div class="perf-card-modern"><img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/IMG_20211227_111535-1024x576.jpg"><div class="perf-overlay"><h4 class="perf-title">ซ่อมบำรุงคอมพิวเตอร์</h4></div></div>
+                        </div>
                 </div>
             </div>
+
+            <div id="modal-activities" class="full-modal">
+                <div class="modal-header">
+                    <h3 style="margin:0; font-size: 1.1rem; color: var(--primary);"><i class="fas fa-camera-retro" style="color: #ec4899;"></i> รายการกิจกรรมทั้งหมด</h3>
+                    <button class="modal-close-btn" onclick="closeFullModal('modal-activities')"><i class="fas fa-times"></i></button>
+                </div>
+                <div style="padding: 20px;">
+                    <div class="act-grid-modern">
+                        <div class="act-card-modern" onclick="openActivityLightbox('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', '2565', 'คณะกรรมการคุมสอบ V-NET', 'ปฏิบัติหน้าที่คุมสอบและดูแลความเรียบร้อย')"><span class="act-year-badge">2565</span><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"><div class="act-overlay-text"><h4 class="act-title">คุมสอบ V-NET</h4><p class="act-desc">รายละเอียดกิจกรรม...</p></div></div>
+                        </div>
+                </div>
+            </div>
+
+            <div id="actLightbox" class="lightbox-overlay" onclick="closeActivityLightbox(event)">
+                <button class="lightbox-close" onclick="closeActivityLightbox(event)"><i class="fas fa-times"></i></button>
+                <img id="lbImage" class="lightbox-content" src="" alt="Popup Image">
+                <div class="lightbox-text-container">
+                    <span id="lbYear" style="background: var(--accent); color: white; padding: 2px 8px; border-radius: 6px; font-size: 0.75rem; margin-bottom: 8px; display: inline-block;">ปี พ.ศ.</span>
+                    <h4 id="lbTitle" class="lightbox-title">ชื่อกิจกรรม</h4>
+                    <p id="lbDesc" class="lightbox-desc">คำอธิบายกิจกรรมเพิ่มเติม...</p>
+                </div>
+            </div>
+            
+            <script>
+                // ฟังก์ชันเปิด/ปิด หน้ารวมทั้งหมด (Full Modal)
+                function openFullModal(modalId) {
+                    document.getElementById(modalId).classList.add('active');
+                    document.body.style.overflow = 'hidden'; // ล็อกการเลื่อนหน้าจอหลัก
+                }
+                function closeFullModal(modalId) {
+                    document.getElementById(modalId).classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+
+                // ฟังก์ชันเปิด/ปิด ภาพขยายกิจกรรม (Lightbox Popup)
+                function openActivityLightbox(imgUrl, year, title, desc) {
+                    document.getElementById('lbImage').src = imgUrl;
+                    document.getElementById('lbYear').innerText = "พ.ศ. " + year;
+                    document.getElementById('lbTitle').innerText = title;
+                    document.getElementById('lbDesc').innerText = desc;
+                    
+                    document.getElementById('actLightbox').classList.add('active');
+                }
+                function closeActivityLightbox(event) {
+                    // ปิดเมื่อกดพื้นหลังสีดำ หรือกดปุ่มกากบาท
+                    if (event.target.id === 'actLightbox' || event.target.closest('.lightbox-close')) {
+                        document.getElementById('actLightbox').classList.remove('active');
+                    }
+                }
+            </script>
+
         </section>
+
+        
     </div>
 
     <!--Navbar-->
