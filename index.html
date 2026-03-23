@@ -1803,8 +1803,8 @@
                             <div class="task-tags">
                                 <a href="https://dcce.go.th" target="_blank" class="task-tag"><i class="fas fa-link"
                                         style="font-size:0.6rem;"></i> เว็บไซต์กรมฯ (dcce.go.th)</a>
-                                <a href="https://greenplatform.dcce.go.th" target="_blank" class="task-tag"><i
-                                        class="fas fa-link" style="font-size:0.6rem;"></i> Green Digital Platform</a>
+                                <span class="task-tag"><i class="fas fa-tree" style="color:#10b981;"></i> ระบบ Green
+                                    Area</span>
                                 <span class="task-tag"><i class="fas fa-book" style="color:#8b5cf6;"></i> ห้องสมุด
                                     (Greenlibrary)</span>
                             </div>
@@ -2085,498 +2085,47 @@
         </section>
 
         <!--section activities-->
-      <section id="activities">
-            
-            <style>
-                /* --- General & Header --- */
-                #activities .section-title {
-                    margin-top: 30px;
-                    margin-bottom: 15px;
-                    font-size: 1.25rem;
-                }
-
-                /* --- 🌟 ระบบ Tab Navigation สไตล์แอปมือถือ --- */
-                .act-tabs-container {
-                    display: flex;
-                    background: #f1f5f9;
-                    padding: 6px;
-                    border-radius: 16px;
-                    margin-bottom: 25px;
-                    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
-                    overflow-x: auto;
-                    scrollbar-width: none;
-                }
-                .act-tabs-container::-webkit-scrollbar { display: none; }
-                
-                .act-tab-btn {
-                    flex: 1;
-                    min-width: 100px;
-                    text-align: center;
-                    padding: 10px 5px;
-                    background: transparent;
-                    border: none;
-                    border-radius: 12px;
-                    font-family: 'Prompt', sans-serif;
-                    font-size: 0.8rem;
-                    font-weight: 600;
-                    color: #64748b;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-                    white-space: nowrap;
-                }
-                .act-tab-btn i { margin-right: 5px; font-size: 1rem; }
-                .act-tab-btn.active {
-                    background: #ffffff;
-                    color: var(--primary);
-                    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-                }
-
-                /* --- 🌟 Tab Content Panes --- */
-                .act-tab-pane {
-                    display: none;
-                    animation: fadeInTab 0.4s ease-out forwards;
-                }
-                .act-tab-pane.active {
-                    display: block;
-                }
-                @keyframes fadeInTab {
-                    from { opacity: 0; transform: translateY(10px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-
-                /* --- 🌟 Layout Grid ของการ์ดแต่ละประเภท --- */
-                .modern-grid {
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 15px;
-                }
-                @media (max-width: 380px) {
-                    .modern-grid { grid-template-columns: 1fr; }
-                }
-
-                /* --- 1. สไตล์ใบประกาศ (Training & Performance) ปรับให้ภาพไม่แหว่ง --- */
-                .cert-card {
-                    background: #fff; border-radius: 16px; overflow: hidden;
-                    box-shadow: 0 8px 20px rgba(0,0,0,0.04); border: 1px solid #e2e8f0;
-                    cursor: zoom-in; transition: transform 0.2s; position: relative;
-                }
-                .cert-card:active { transform: scale(0.97); }
-                .cert-img-wrap {
-                    width: 100%; aspect-ratio: 1.414; /* สัดส่วน A4 แนวนอน ไม่ทำให้ภาพแหว่ง */
-                    background: #f1f5f9; padding: 10px; position: relative;
-                }
-                .cert-img-wrap img {
-                    width: 100%; height: 100%; object-fit: contain; /* ป้องกันภาพแหว่ง */
-                    background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-                }
-                .cert-badge {
-                    position: absolute; top: 15px; right: 15px;
-                    background: var(--accent); color: white; font-size: 0.65rem;
-                    padding: 4px 10px; border-radius: 20px; font-weight: 600; z-index: 2;
-                    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-                }
-                .cert-info { padding: 12px; border-top: 3px solid var(--secondary); }
-                .cert-title { font-size: 0.85rem; font-weight: 700; color: var(--text-main); margin: 0 0 5px; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-                .cert-org { font-size: 0.7rem; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
-
-                /* --- 2. สไตล์กิจกรรม (Activities) พร้อมปี พ.ศ. และข้อความ --- */
-                .photo-card {
-                    position: relative; border-radius: 16px; overflow: hidden;
-                    aspect-ratio: 4/5; box-shadow: 0 6px 15px rgba(0,0,0,0.06);
-                    cursor: zoom-in; transition: transform 0.2s;
-                }
-                .photo-card:active { transform: scale(0.97); }
-                .photo-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
-                .photo-card:hover img { transform: scale(1.08); }
-                
-                .photo-overlay {
-                    position: absolute; bottom: 0; left: 0; width: 100%;
-                    background: linear-gradient(to top, rgba(15,23,42,0.95), rgba(15,23,42,0.6) 60%, transparent);
-                    color: white; padding: 25px 12px 12px; display: flex; flex-direction: column; justify-content: flex-end;
-                }
-                .photo-title { font-size: 0.85rem; font-weight: 700; margin: 0 0 4px; line-height: 1.3; }
-                .photo-desc { font-size: 0.7rem; color: #cbd5e1; margin: 0; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-                .photo-badge-top {
-                    position: absolute; top: 10px; right: 10px; background: rgba(236, 72, 153, 0.9);
-                    color: white; font-size: 0.65rem; font-weight: bold; padding: 4px 8px; border-radius: 8px; backdrop-filter: blur(4px); box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-                }
-
-                /* --- 🌟 ปุ่มดูทั้งหมด (View All Button) --- */
-                .btn-view-all {
-                    display: flex; align-items: center; justify-content: center; gap: 8px;
-                    width: 100%; padding: 12px; margin-top: 15px; margin-bottom: 20px;
-                    background: rgba(59, 130, 246, 0.08); color: var(--secondary);
-                    border: 1px dashed var(--secondary); border-radius: 14px;
-                    font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
-                }
-                .btn-view-all:active { transform: scale(0.98); background: var(--secondary); color: white; }
-
-                /* --- 🌟 Full Screen Modal (หน้าสำหรับ "ดูทั้งหมด") --- */
-                .full-modal {
-                    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-                    background: var(--bg-body); z-index: 2000; overflow-y: auto;
-                    transform: translateY(100%); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                    padding-bottom: 50px;
-                }
-                .full-modal.active { transform: translateY(0); }
-                .modal-header {
-                    position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);
-                    padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;
-                    z-index: 10; border-bottom: 1px solid #e2e8f0; box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-                }
-                .modal-close-btn {
-                    background: #f1f5f9; border: none; width: 35px; height: 35px; border-radius: 50%;
-                    color: #64748b; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
-                }
-
-                /* --- 🌟 Lightbox Popup (ทำงานได้จริง 100%) --- */
-                .super-lightbox {
-                    display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%;
-                    background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px);
-                    align-items: center; justify-content: center; flex-direction: column;
-                    opacity: 0; transition: opacity 0.3s ease;
-                }
-                .super-lightbox.show { display: flex; opacity: 1; }
-                .lb-img-container {
-                    position: relative; width: 90%; max-width: 800px; max-height: 65vh;
-                    display: flex; justify-content: center;
-                }
-                .lb-img-container img {
-                    max-width: 100%; max-height: 100%; object-fit: contain;
-                    border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.4); background: white;
-                }
-                .lb-close-btn {
-                    position: absolute; top: 20px; right: 20px;
-                    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-                    color: white; width: 40px; height: 40px; border-radius: 50%;
-                    font-size: 1.2rem; display: flex; align-items: center; justify-content: center;
-                    cursor: pointer; transition: 0.2s; z-index: 10000;
-                }
-                .lb-close-btn:active { transform: scale(0.9); background: #ef4444; border-color: #ef4444; }
-                .lb-details {
-                    width: 90%; max-width: 800px; background: rgba(255,255,255,0.05);
-                    border: 1px solid rgba(255,255,255,0.1); margin-top: 20px; padding: 15px;
-                    border-radius: 16px; color: white; text-align: center;
-                }
-                .lb-tag { display: inline-block; background: var(--secondary); color: white; font-size: 0.7rem; padding: 3px 10px; border-radius: 20px; margin-bottom: 8px; font-weight: 600; }
-                .lb-title { font-size: 1.1rem; font-weight: 700; margin: 0 0 5px; color: #bae6fd; }
-                .lb-desc { font-size: 0.85rem; color: #cbd5e1; margin: 0; line-height: 1.5; }
-            </style>
-
-            <h2 class="section-title"><i class="fas fa-star" style="color: #f59e0b;"></i> ผลงานและกิจกรรม</h2>
-
-            <div class="act-tabs-container">
-                <button class="act-tab-btn active" onclick="openActTab('tab-training', this)">
-                    <i class="fas fa-certificate" style="color:#10b981;"></i> การอบรม
-                </button>
-                <button class="act-tab-btn" onclick="openActTab('tab-performance', this)">
-                    <i class="fas fa-laptop-code" style="color:#3b82f6;"></i> ผลงานทางวิชาชีพ
-                </button>
-                <button class="act-tab-btn" onclick="openActTab('tab-activities', this)">
-                    <i class="fas fa-camera-retro" style="color:#ec4899;"></i> กิจกรรม
-                </button>
-            </div>
-
-            <div id="tab-training" class="act-tab-pane active">
-                <div class="modern-grid">
-                    <div class="cert-card" onclick="openSuperLB('./dies/docs/ai_page-0001.jpg', 'Certificate', 'การใช้ AI ในการวิเคราะห์ข้อมูล', 'โดย สำนักงานสถิติแห่งชาติ 2026')">
-                        <div class="cert-img-wrap"><span class="cert-badge" style="background:#10b981;">Certificate</span><img src="./dies/docs/ai_page-0001.jpg" alt="Cert 1"></div>
-                        <div class="cert-info">
-                            <h4 class="cert-title">การใช้ AI วิเคราะห์และนำเสนอข้อมูล GDC</h4>
-                            <div class="cert-org"><i class="fas fa-university"></i> สนง.สถิติแห่งชาติ 2026</div> 
-                        </div>
-                    </div>
-                    <div class="cert-card" onclick="openSuperLB('./dies/docs/network_page.jpg', 'Certificate', 'เครือข่ายและความปลอดภัย', 'โดย มหาวิทยาลัยราชภัฎนครศรีธรรมราช 2025')">
-                        <div class="cert-img-wrap"><span class="cert-badge" style="background:#10b981;">Certificate</span><img src="./dies/docs/network_page.jpg" alt="Cert 2"></div>
-                        <div class="cert-info">
-                            <h4 class="cert-title">เครือข่ายและความปลอดภัย</h4>
-                            <div class="cert-org"><i class="fas fa-university"></i> มรภ.นครศรีธรรมราช 2025</div>
-                        </div>
-                    </div>
-                    <div class="cert-card" onclick="openSuperLB('./dies/docs/Chatbot.jpg', 'Certificate', 'Chatbot Design', 'โดย GOCC 2025')">
-                        <div class="cert-img-wrap"><span class="cert-badge" style="background:#10b981;">Certificate</span><img src="./dies/docs/Chatbot.jpg" alt="Cert 3"></div>
-                        <div class="cert-info">
-                            <h4 class="cert-title">หลักสูตร Chatbot Design</h4>
-                            <div class="cert-org"><i class="fas fa-building"></i> GOCC 2025</div>
-                        </div>
-                    </div>
-                    <div class="cert-card" onclick="openSuperLB('./dies/docs/CertificateDGA104.jpg', 'Certificate', 'ความมั่นคงปลอดภัยไซเบอร์พื้นฐาน', 'โดย สำนักงานพัฒนารัฐบาลดิจิทัล (DGA) 2025')">
-                        <div class="cert-img-wrap"><span class="cert-badge" style="background:#10b981;">Certificate</span><img src="./dies/docs/CertificateDGA104.jpg" alt="Cert 4"></div>
-                        <div class="cert-info">
-                            <h4 class="cert-title">ความมั่นคงปลอดภัยไซเบอร์พื้นฐาน</h4>
-                            <div class="cert-org"><i class="fas fa-building"></i> DGA 2025</div>
-                        </div>
+        <section id="activities">
+            <h2 class="section-title"><i class="fas fa-chalkboard-teacher"></i> หลักสูตรการอบรม</h2>
+            <div class="card" style="padding: 15px;">
+                <div
+                    style="display: flex; gap: 15px; margin-bottom: 15px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px;">
+                    <img src="https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                        style="width: 80px; height: 60px; border-radius: 8px; object-fit: cover;">
+                    <div>
+                        <h4 style="margin:0 0 5px; font-size:0.9rem;">การอบรมด้าน Security & UX/UI</h4>
+                        <p style="margin:0; font-size:0.8rem; color:var(--text-muted);">
+                            เสริมสร้างทักษะการออกแบบและรักษาความปลอดภัยระบบ</p>
                     </div>
                 </div>
-                <button class="btn-view-all" onclick="openFullModal('modal-training')"><i class="fas fa-list"></i> ดูหลักสูตรทั้งหมด</button>
-            </div>
-
-            <div id="tab-performance" class="act-tab-pane">
-                <div class="modern-grid">
-                    <div class="cert-card" onclick="openSuperLB('https://images.unsplash.com/photo-1567168539593-59673ababaae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', 'ชนะเลิศ อันดับ 1', 'สิ่งประดิษฐ์ นวัตกรรมสานสัมพันธ์ลุ่มน้ำโขง ครั้งที่ 6', 'รางวัลชนะเลิศ อันดับ 1 ประเภทที่ 4 โดย มหาวิทยาลัยนครพนม')">
-                        <div class="cert-img-wrap">
-                            <span class="cert-badge" style="background: #f59e0b;">ชนะเลิศ อันดับ 1</span>
-                            <img src="https://images.unsplash.com/photo-1567168539593-59673ababaae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="รางวัลชนะเลิศ นวัตกรรม">
-                        </div>
-                        <div class="cert-info">
-                            <h4 class="cert-title">นวัตกรรมสานสัมพันธ์ลุ่มน้ำโขง ครั้งที่ 6</h4>
-                            <div class="cert-org"><i class="fas fa-university"></i> มหาวิทยาลัยนครพนม</div>
-                        </div>
-                    </div>
-                    <div class="cert-card" onclick="openSuperLB('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', 'ชนะเลิศ อันดับ 1', 'การแข่งขันสร้างเว็บเพจ ประเภท Web Editor', 'ได้รับรางวัลชนะเลิศ (ในฐานะครูผู้ควบคุมทีม) จัดโดย มหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน วิทยาเขตสกลนคร')">
-                        <div class="cert-img-wrap">
-                            <span class="cert-badge" style="background: #f59e0b;">ชนะเลิศ อันดับ 1</span>
-                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="รางวัลชนะเลิศ สร้างเว็บเพจ">
-                        </div>
-                        <div class="cert-info">
-                            <h4 class="cert-title">การแข่งขันสร้างเว็บเพจ (Web Editor)</h4>
-                            <div class="cert-org"><i class="fas fa-university"></i> มทร.อีสาน สกลนคร</div>
-                        </div>
-                    </div>
-                    <div class="cert-card" onclick="openSuperLB('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', 'วิทยากร', 'วิทยากรโครงการการใช้เทคโนโลยีสารสนเทศ', 'เป็นวิทยากรในการอบรมโครงการการใช้เทคโนโลยีสารสนเทศของครูและบุคลากรทางการศึกษา เพื่อพัฒนาการจัดการเรียนการสอน โดย วิทยาลัยเทคโนโลยีธาตุพนม')">
-                        <div class="cert-img-wrap">
-                            <span class="cert-badge" style="background: var(--secondary);">วิทยากร</span>
-                            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="วิทยากรการใช้เทคโนโลยี">
-                        </div>
-                        <div class="cert-info">
-                            <h4 class="cert-title">วิทยากรโครงการการใช้เทคโนโลยีสารสนเทศ</h4>
-                            <div class="cert-org"><i class="fas fa-building"></i> ว.เทคโนโลยีธาตุพนม</div>
-                        </div>
-                    </div>
-                    <div class="cert-card" onclick="openSuperLB('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', 'รางวัลเกียรติยศ', 'ครูดี มีจรรยาบรรณ มีความคิดสร้างสรรค์ มุ่งมั่นวิชาชีพ', 'ได้รับรางวัลเชิดชูเกียรติ มอบโดย วิทยาลัยเทคโนโลยีธาตุพนม')">
-                        <div class="cert-img-wrap">
-                            <span class="cert-badge" style="background: #ec4899;">รางวัลเกียรติยศ</span>
-                            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="ครูดี มีจรรยาบรรณ">
-                        </div>
-                        <div class="cert-info">
-                            <h4 class="cert-title">ครูดี มีจรรยาบรรณ มีความคิดสร้างสรรค์</h4>
-                            <div class="cert-org"><i class="fas fa-building"></i> ว.เทคโนโลยีธาตุพนม</div>
-                        </div>
-                    </div>
-                </div>
-                <button class="btn-view-all" onclick="openFullModal('modal-performance')"><i class="fas fa-th-large"></i> ดูผลงานวิชาชีพทั้งหมด</button>
-            </div>
-
-            <div id="tab-activities" class="act-tab-pane">
-                <div class="modern-grid">
-                    <div class="photo-card" onclick="openSuperLB('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', 'พ.ศ. 2565', 'คณะกรรมการคุมสอบ V-NET', 'ปฏิบัติหน้าที่คุมสอบและดูแลความเรียบร้อยการทดสอบทางการศึกษาแห่งชาติ')">
-                        <span class="photo-badge-top" style="background: #ec4899;">2565</span>
-                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Act 1">
-                        <div class="photo-overlay">
-                            <h4 class="photo-title">คุมสอบ V-NET</h4>
-                            <p class="photo-desc">ดูแลความเรียบร้อยการทดสอบฯ</p>
-                        </div>
-                    </div>
-                    <div class="photo-card" onclick="openSuperLB('https://jesada.pichet-green.com/wp-content/uploads/2025/01/249658-1024x768.jpg', 'พ.ศ. 2564', 'วิทยากรบรรยายพิเศษ', 'บรรยายให้ความรู้ด้านเทคโนโลยีและคอมพิวเตอร์พื้นฐานแก่นักศึกษาใหม่')">
-                        <span class="photo-badge-top" style="background: #8b5cf6;">2564</span>
-                        <img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/249658-1024x768.jpg" alt="Act 2">
-                        <div class="photo-overlay">
-                            <h4 class="photo-title">วิทยากรบรรยายพิเศษ</h4>
-                            <p class="photo-desc">บรรยายความรู้เทคโนโลยีพื้นฐาน</p>
-                        </div>
-                    </div>
-                    <div class="photo-card" onclick="openSuperLB('https://jesada.pichet-green.com/wp-content/uploads/2025/01/IMG_20211227_111535-1024x576.jpg', 'พ.ศ. 2563', 'อบรมเชิงปฏิบัติการ', 'สอนการประกอบคอมพิวเตอร์และการติดตั้งระบบปฏิบัติการเบื้องต้น')">
-                        <span class="photo-badge-top" style="background: #3b82f6;">2563</span>
-                        <img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/IMG_20211227_111535-1024x576.jpg" alt="Act 3">
-                        <div class="photo-overlay">
-                            <h4 class="photo-title">อบรมเชิงปฏิบัติการ</h4>
-                            <p class="photo-desc">สอนประกอบและติดตั้ง OS</p>
-                        </div>
-                    </div>
-                    <div class="photo-card" onclick="openSuperLB('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', 'พ.ศ. 2562', 'ศึกษาดูงานระบบ IT', 'เข้าร่วมศึกษาดูงานด้านการพัฒนาระบบเครือข่ายระดับองค์กร')">
-                        <span class="photo-badge-top" style="background: #10b981;">2562</span>
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Act 4">
-                        <div class="photo-overlay">
-                            <h4 class="photo-title">ศึกษาดูงานระบบ IT</h4>
-                            <p class="photo-desc">ดูงานการพัฒนาระบบเครือข่าย</p>
-                        </div>
-                    </div>
-                </div>
-                <button class="btn-view-all" onclick="openFullModal('modal-activities')"><i class="fas fa-images"></i> ดูกิจกรรมทั้งหมด</button>
-            </div>
-
-            <div id="modal-training" class="full-modal">
-                <div class="modal-header">
-                    <h3 style="margin:0; font-size: 1.1rem; color: var(--primary);"><i class="fas fa-certificate" style="color: #10b981;"></i> รายการหลักสูตรทั้งหมด</h3>
-                    <button class="modal-close-btn" onclick="closeFullModal('modal-training')"><i class="fas fa-times"></i></button>
-                </div>
-                <div style="padding: 20px;">
-                    <div class="modern-grid">
-                        <div class="cert-card" onclick="openSuperLB('./dies/docs/ai_page-0001.jpg', 'Certificate', 'การใช้ AI ในการวิเคราะห์ข้อมูล', 'โดย สำนักงานสถิติแห่งชาติ 2026')">
-                            <div class="cert-img-wrap"><span class="cert-badge" style="background:#10b981;">Certificate</span><img src="./dies/docs/ai_page-0001.jpg" alt="Cert 1"></div>
-                            <div class="cert-info">
-                                <h4 class="cert-title">การใช้ AI วิเคราะห์ข้อมูล GDC</h4>
-                                <div class="cert-org"><i class="fas fa-university"></i> สนง.สถิติแห่งชาติ 2026</div> 
-                            </div>
-                        </div>
-                        <div class="cert-card" onclick="openSuperLB('./dies/docs/network_page.jpg', 'Certificate', 'เครือข่ายและความปลอดภัย', 'โดย มหาวิทยาลัยราชภัฎนครศรีธรรมราช 2025')">
-                            <div class="cert-img-wrap"><span class="cert-badge" style="background:#10b981;">Certificate</span><img src="./dies/docs/network_page.jpg" alt="Cert 2"></div>
-                            <div class="cert-info">
-                                <h4 class="cert-title">เครือข่ายและความปลอดภัย</h4>
-                                <div class="cert-org"><i class="fas fa-university"></i> มรภ.นครศรีธรรมราช 2025</div>
-                            </div>
-                        </div>
-                        <div class="cert-card" onclick="openSuperLB('./dies/docs/Chatbot.jpg', 'Certificate', 'Chatbot Design', 'โดย GOCC 2025')">
-                            <div class="cert-img-wrap"><span class="cert-badge" style="background:#10b981;">Certificate</span><img src="./dies/docs/Chatbot.jpg" alt="Cert 3"></div>
-                            <div class="cert-info">
-                                <h4 class="cert-title">หลักสูตร Chatbot Design</h4>
-                                <div class="cert-org"><i class="fas fa-building"></i> GOCC 2025</div>
-                            </div>
-                        </div>
-                        <div class="cert-card" onclick="openSuperLB('./dies/docs/CertificateDGA104.jpg', 'Certificate', 'ความมั่นคงปลอดภัยไซเบอร์พื้นฐาน', 'โดย สำนักงานพัฒนารัฐบาลดิจิทัล (DGA) 2025')">
-                            <div class="cert-img-wrap"><span class="cert-badge" style="background:#10b981;">Certificate</span><img src="./dies/docs/CertificateDGA104.jpg" alt="Cert 4"></div>
-                            <div class="cert-info">
-                                <h4 class="cert-title">ความมั่นคงปลอดภัยไซเบอร์พื้นฐาน</h4>
-                                <div class="cert-org"><i class="fas fa-building"></i> DGA 2025</div>
-                            </div>
-                        </div>
-                        <div class="cert-card" onclick="openSuperLB('./dies/docs/softwarea-digital.jpg', 'Certificate', 'การพัฒนาซอฟต์แวร์สำหรับการบริการด้านดิจิทัลภาครัฐ', 'สำนักงานพัฒนารัฐบาลดิจิทัล (DGA) 2025')">
-                            <div class="cert-img-wrap"><span class="cert-badge" style="background:#10b981;">Certificate</span><img src="./dies/docs/softwarea-digital.jpg" alt="Cert 5"></div>
-                            <div class="cert-info">
-                                <h4 class="cert-title">พัฒนาซอฟต์แวร์บริการดิจิทัลภาครัฐ</h4>
-                                <div class="cert-org"><i class="fas fa-building"></i> DGA 2025</div>
-                            </div>
-                        </div>
-                        <div class="cert-card" onclick="openSuperLB('/dies/docs/google-engine.jpg', 'Certificate', 'การประยุกต์ใช้ Google Earth Engine', 'มหาวิทยาลัยมหิดล 2024')">
-                            <div class="cert-img-wrap"><span class="cert-badge" style="background:#10b981;">Certificate</span><img src="/dies/docs/google-engine.jpg" alt="Cert 6"></div>
-                            <div class="cert-info">
-                                <h4 class="cert-title">การประยุกต์ใช้ Google Earth Engine</h4>
-                                <div class="cert-org"><i class="fas fa-building"></i> มหาวิทยาลัยมหิดล 2024</div>
-                            </div>
-                        </div>
+                <div style="display: flex; gap: 15px;">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                        style="width: 80px; height: 60px; border-radius: 8px; object-fit: cover;">
+                    <div>
+                        <h4 style="margin:0 0 5px; font-size:0.9rem;">งานประกันคุณภาพการศึกษา (QA)</h4>
+                        <p style="margin:0; font-size:0.8rem; color:var(--text-muted);">วิทยาลัยเทคโนโลยีธาตุพนม</p>
                     </div>
                 </div>
             </div>
 
-            <div id="modal-performance" class="full-modal">
-                <div class="modal-header">
-                    <h3 style="margin:0; font-size: 1.1rem; color: var(--primary);"><i class="fas fa-laptop-code" style="color: #3b82f6;"></i> ผลงานทางวิชาชีพทั้งหมด</h3>
-                    <button class="modal-close-btn" onclick="closeFullModal('modal-performance')"><i class="fas fa-times"></i></button>
-                </div>
-                <div style="padding: 20px;">
-                    <h3 style="font-size: 1rem; color: var(--primary); margin: 0 0 15px; display: flex; align-items: center; gap: 8px;">
-                        <i class="fas fa-trophy" style="color: #f59e0b;"></i> ผลงานทางด้านการศึกษา
-                    </h3>
-                    <div class="modern-grid" style="margin-bottom: 25px;">
-                        <div class="cert-card" onclick="openSuperLB('https://images.unsplash.com/photo-1567168539593-59673ababaae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', 'ชนะเลิศ อันดับ 1', 'สิ่งประดิษฐ์ นวัตกรรมสานสัมพันธ์ลุ่มน้ำโขง ครั้งที่ 6', 'รางวัลชนะเลิศ อันดับ 1 ประเภทที่ 4 โดย มหาวิทยาลัยนครพนม')">
-                            <div class="cert-img-wrap"><span class="cert-badge" style="background: #f59e0b;">ชนะเลิศ อันดับ 1</span><img src="https://images.unsplash.com/photo-1567168539593-59673ababaae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Perf 1"></div>
-                            <div class="cert-info"><h4 class="cert-title">นวัตกรรมสานสัมพันธ์ลุ่มน้ำโขง ครั้งที่ 6</h4><div class="cert-org"><i class="fas fa-university"></i> มหาวิทยาลัยนครพนม</div></div>
-                        </div>
-                        <div class="cert-card" onclick="openSuperLB('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', 'ชนะเลิศ อันดับ 1', 'การแข่งขันสร้างเว็บเพจ ประเภท Web Editor', 'ได้รับรางวัลชนะเลิศ (ในฐานะครูผู้ควบคุมทีม) จัดโดย มทร.อีสาน วิทยาเขตสกลนคร')">
-                            <div class="cert-img-wrap"><span class="cert-badge" style="background: #f59e0b;">ชนะเลิศ อันดับ 1</span><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Perf 2"></div>
-                            <div class="cert-info"><h4 class="cert-title">แข่งขันสร้างเว็บเพจ (Web Editor)</h4><div class="cert-org"><i class="fas fa-university"></i> มทร.อีสาน สกลนคร</div></div>
-                        </div>
-                        <div class="cert-card" onclick="openSuperLB('https://images.unsplash.com/photo-1589330694653-ded6df03f754?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', 'รองชนะเลิศ อันดับ 1', 'สิ่งประดิษฐ์ นวัตกรรมสานสัมพันธ์ลุ่มน้ำโขง ครั้งที่ 5', 'รางวัลรองชนะเลิศ อันดับ 1 ประเภทที่ 3 โดย มหาวิทยาลัยนครพนม')">
-                            <div class="cert-img-wrap"><span class="cert-badge" style="background: #64748b;">รองชนะเลิศ อันดับ 1</span><img src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Perf 3"></div>
-                            <div class="cert-info"><h4 class="cert-title">นวัตกรรมสานสัมพันธ์ลุ่มน้ำโขง ครั้งที่ 5</h4><div class="cert-org"><i class="fas fa-university"></i> มหาวิทยาลัยนครพนม</div></div>
-                        </div>
+            <h2 class="section-title"><i class="fas fa-images"></i> ภาพกิจกรรม</h2>
+            <div class="grid-2">
+                <div class="media-card">
+                    <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                        class="media-img" style="height: 100px;">
+                    <div class="media-content" style="padding: 8px;">
+                        <h4 style="margin:0; font-size:0.8rem; text-align: center;">วิทยากรบริการวิชาชีพ</h4>
                     </div>
-
-                    <h3 style="font-size: 1rem; color: var(--primary); margin: 0 0 15px; display: flex; align-items: center; gap: 8px;">
-                        <i class="fas fa-chalkboard-teacher" style="color: var(--secondary);"></i> ผลงานตรงกับวิชาชีพ
-                    </h3>
-                    <div class="modern-grid">
-                        <div class="cert-card" onclick="openSuperLB('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', 'วิทยากร', 'วิทยากรโครงการการใช้เทคโนโลยีสารสนเทศ', 'วิทยากรในการอบรมครูเพื่อพัฒนาการจัดการเรียนการสอน โดย วิทยาลัยเทคโนโลยีธาตุพนม')">
-                            <div class="cert-img-wrap"><span class="cert-badge" style="background: var(--secondary);">วิทยากร</span><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Perf 4"></div>
-                            <div class="cert-info"><h4 class="cert-title">วิทยากรโครงการใช้เทคโนโลยีสารสนเทศ</h4><div class="cert-org"><i class="fas fa-building"></i> ว.เทคโนโลยีธาตุพนม</div></div>
-                        </div>
-                        <div class="cert-card" onclick="openSuperLB('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', 'รางวัลเกียรติยศ', 'ครูดี มีจรรยาบรรณ มีความคิดสร้างสรรค์ มุ่งมั่นวิชาชีพ', 'ได้รับรางวัลเชิดชูเกียรติ มอบโดย วิทยาลัยเทคโนโลยีธาตุพนม')">
-                            <div class="cert-img-wrap"><span class="cert-badge" style="background: #ec4899;">รางวัลเกียรติยศ</span><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Perf 5"></div>
-                            <div class="cert-info"><h4 class="cert-title">ครูดี มีจรรยาบรรณ สร้างสรรค์วิชาชีพ</h4><div class="cert-org"><i class="fas fa-building"></i> ว.เทคโนโลยีธาตุพนม</div></div>
-                        </div>
+                </div>
+                <div class="media-card">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                        class="media-img" style="height: 100px;">
+                    <div class="media-content" style="padding: 8px;">
+                        <h4 style="margin:0; font-size:0.8rem; text-align: center;">คณะกรรมการคุมสอบ v-net</h4>
                     </div>
                 </div>
             </div>
-
-            <div id="modal-activities" class="full-modal">
-                <div class="modal-header">
-                    <h3 style="margin:0; font-size: 1.1rem; color: var(--primary);"><i class="fas fa-camera-retro" style="color: #ec4899;"></i> รายการกิจกรรมทั้งหมด</h3>
-                    <button class="modal-close-btn" onclick="closeFullModal('modal-activities')"><i class="fas fa-times"></i></button>
-                </div>
-                <div style="padding: 20px;">
-                    <div class="modern-grid">
-                        <div class="photo-card" onclick="openSuperLB('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', 'พ.ศ. 2565', 'คณะกรรมการคุมสอบ V-NET', 'ปฏิบัติหน้าที่คุมสอบและดูแลความเรียบร้อยการทดสอบทางการศึกษาแห่งชาติ')">
-                            <span class="photo-badge-top" style="background: #ec4899;">2565</span><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Act 1"><div class="photo-overlay"><h4 class="photo-title">คุมสอบ V-NET</h4><p class="photo-desc">ดูแลความเรียบร้อยการทดสอบฯ</p></div>
-                        </div>
-                        <div class="photo-card" onclick="openSuperLB('https://jesada.pichet-green.com/wp-content/uploads/2025/01/249658-1024x768.jpg', 'พ.ศ. 2564', 'วิทยากรบรรยายพิเศษ', 'บรรยายให้ความรู้ด้านเทคโนโลยีและคอมพิวเตอร์พื้นฐานแก่นักศึกษาใหม่')">
-                            <span class="photo-badge-top" style="background: #8b5cf6;">2564</span><img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/249658-1024x768.jpg" alt="Act 2"><div class="photo-overlay"><h4 class="photo-title">วิทยากรบรรยายพิเศษ</h4><p class="photo-desc">บรรยายความรู้เทคโนโลยีพื้นฐาน</p></div>
-                        </div>
-                        <div class="photo-card" onclick="openSuperLB('https://jesada.pichet-green.com/wp-content/uploads/2025/01/IMG_20211227_111535-1024x576.jpg', 'พ.ศ. 2563', 'อบรมเชิงปฏิบัติการ', 'สอนการประกอบคอมพิวเตอร์และการติดตั้งระบบปฏิบัติการเบื้องต้น')">
-                            <span class="photo-badge-top" style="background: #3b82f6;">2563</span><img src="https://jesada.pichet-green.com/wp-content/uploads/2025/01/IMG_20211227_111535-1024x576.jpg" alt="Act 3"><div class="photo-overlay"><h4 class="photo-title">อบรมเชิงปฏิบัติการ</h4><p class="photo-desc">สอนประกอบและติดตั้ง OS</p></div>
-                        </div>
-                        <div class="photo-card" onclick="openSuperLB('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', 'พ.ศ. 2562', 'ศึกษาดูงานระบบ IT', 'เข้าร่วมศึกษาดูงานด้านการพัฒนาระบบเครือข่ายระดับองค์กร')">
-                            <span class="photo-badge-top" style="background: #10b981;">2562</span><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Act 4"><div class="photo-overlay"><h4 class="photo-title">ศึกษาดูงานระบบ IT</h4><p class="photo-desc">ดูงานการพัฒนาระบบเครือข่าย</p></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="superLightbox" class="super-lightbox" onclick="closeSuperLB(event)">
-                <button class="lb-close-btn" onclick="closeSuperLB(event)"><i class="fas fa-times"></i></button>
-                <div class="lb-img-container">
-                    <img id="lbImg" src="" alt="Zoomed Image">
-                </div>
-                <div class="lb-details">
-                    <span id="lbTag" class="lb-tag">Tag</span>
-                    <h4 id="lbTitle" class="lb-title">Title</h4>
-                    <p id="lbDesc" class="lb-desc">Description</p>
-                </div>
-            </div>
-
-            <script>
-                // 1. ฟังก์ชันเปลี่ยน Tab ในหน้าหลัก
-                function openActTab(tabId, btnElement) {
-                    const panes = document.querySelectorAll('.act-tab-pane');
-                    panes.forEach(pane => pane.classList.remove('active'));
-                    
-                    const btns = document.querySelectorAll('.act-tab-btn');
-                    btns.forEach(btn => btn.classList.remove('active'));
-                    
-                    document.getElementById(tabId).classList.add('active');
-                    btnElement.classList.add('active');
-                }
-
-                // 2. ฟังก์ชันเปิด/ปิด หน้ารวมทั้งหมด (Full Modal)
-                function openFullModal(modalId) {
-                    document.getElementById(modalId).classList.add('active');
-                    document.body.style.overflow = 'hidden'; // ล็อกการเลื่อนหน้าจอหลัก
-                }
-                function closeFullModal(modalId) {
-                    document.getElementById(modalId).classList.remove('active');
-                    document.body.style.overflow = ''; // คืนค่าการเลื่อนหน้าจอหลัก
-                }
-
-                // 3. ฟังก์ชันเปิด-ปิด Lightbox ซูมรูป
-                function openSuperLB(imgUrl, tag, title, desc) {
-                    const lb = document.getElementById('superLightbox');
-                    document.getElementById('lbImg').src = imgUrl;
-                    document.getElementById('lbTag').innerText = tag;
-                    document.getElementById('lbTitle').innerText = title;
-                    document.getElementById('lbDesc').innerText = desc;
-                    
-                    lb.style.display = 'flex';
-                    setTimeout(() => lb.classList.add('show'), 10); 
-                    // ถ้าไม่ได้เปิดจากใน Full Modal ให้ล็อกหน้าจอหลัก
-                    if(!document.querySelector('.full-modal.active')) {
-                        document.body.style.overflow = 'hidden'; 
-                    }
-                }
-                function closeSuperLB(event) {
-                    if (event.target.id === 'superLightbox' || event.target.closest('.lb-close-btn')) {
-                        const lb = document.getElementById('superLightbox');
-                        lb.classList.remove('show');
-                        setTimeout(() => lb.style.display = 'none', 300); 
-                        // ถ้าไม่ได้เปิด Modal อื่นค้างไว้ ค่อยคืนค่า Scroll
-                        if(!document.querySelector('.full-modal.active')) {
-                            document.body.style.overflow = ''; 
-                        }
-                    }
-                }
-            </script>
-
         </section>
-
-
     </div>
 
     <!--Navbar-->
